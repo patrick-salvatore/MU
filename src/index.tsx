@@ -3,7 +3,7 @@ import 'core-js/es/set';
 import 'core-js/stable';
 import React from 'react';
 import { render } from 'react-dom';
-import { AppView } from './Routes/index';
+import { AppView } from './routes/index';
 
 import './index.scss';
 
