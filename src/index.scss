@@ -1,0 +1,84 @@
+@import 'scss/fonts';
+
+* {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fff;
+}
+
+h1,
+h2,
+h4,
+h5 {
+  margin: 0;
+}
+
+h1 {
+  font-family: "Manrope-Bold", sans-serif;
+}
+
+h2 {
+  font-family: "Manrope-Regular", sans-serif;
+}
+
+h3 {
+  font-family: "Poppins", sans-serif;
+}
+
+h4 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+}
+
+h5 {
+  font-family: "Poppins", sans-serif;
+}
+
+a,
+div {
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  text-decoration: none;
+}
+
+p {
+  font-family: 'Benton-Sans-Regular', sans-serif;
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.8em;
+}
+
+i {
+  cursor: pointer;
+}
+
+.no-scroll {
+  html,
+  body {
+    overflow: hidden;
+  }
+}

@@ -1,0 +1,55 @@
+.newsletter-page {
+  .newsletter__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 5px;
+    padding: 140px 50px;
+    padding-top: 250px;
+
+    .nl-img__wrapper {
+      .nl--img {
+        padding: 0 8px;
+        width: 90%;
+      }
+    }
+
+    .nl-form__wrapper {
+      .form--header {
+        font-size: 36px;
+      }
+
+      p {
+        font-size: 16px;
+        margin: 16px 0;
+      }
+
+      .placeholder--form {
+        border: 1.3px solid rgb(58, 57, 57);
+        border-radius: 8px;
+        height: 100%;
+      }
+    }
+  }
+
+  .donation-button__wrapper {
+    display: flex;
+    align-items: center;
+    height: 150px;
+    justify-content: center;
+
+    .donation-button {
+      height: 36px;
+      width: min-content;
+      font-size: 30px;
+      font-style: normal;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #fff;
+      background-color: #00284d;
+      border-color: #00284d;
+      padding: 21px 30px;
+      border-radius: 4px;
+    }
+  }
+}

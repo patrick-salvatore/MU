@@ -1,0 +1,62 @@
+.about__wrapper {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto 275px;
+  justify-items: center;
+  padding: 0px 75px;
+  padding-top: 250px;
+  padding-bottom: 50px;
+
+  .about-content__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 5px;
+
+    .about--image__wrapper {
+      display: flex;
+      justify-content: center;
+
+      .about--image {
+        width: 406px;
+        height: 531px;
+      }
+    }
+
+    .about-text__wrapper {
+      .text--title {
+        font-size: 70px;
+      }
+
+      .text {
+        font-size: 18px;
+        font-family: 'Benton-Sans-Regular', sans-serif;
+        line-height: 1.8em;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .donation-button__wrapper {
+    display: flex;
+    align-items: center;
+
+    .donation-button {
+      height: 36px;
+      width: min-content;
+      font-size: 30px;
+      font-style: normal;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #fff;
+      background-color: #00284d;
+      border-color: #00284d;
+      padding: 21px 30px;
+      border-radius: 4px;
+    }
+  }
+}

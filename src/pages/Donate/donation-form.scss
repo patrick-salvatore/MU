@@ -1,0 +1,11 @@
+.donate--form__wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  .placeholder--form {
+    border: 1.3px solid rgb(58, 57, 57);
+    border-radius: 8px;
+    height: 100%;
+  }
+}

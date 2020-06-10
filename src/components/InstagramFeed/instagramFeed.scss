@@ -1,0 +1,24 @@
+.instagram--header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .header--img {
+    height: 50px;
+    width: 50px;
+    margin-right: 20px;
+  }
+}
+
+.instagram__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .instagram-img {
+    cursor: pointer;
+    height: 250px;
+    width: 250px;
+    margin: 12px 30px;
+  }
+}

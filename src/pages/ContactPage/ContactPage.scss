@@ -1,0 +1,45 @@
+.contact-page {
+  .contact__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    padding: 0px 75px;
+    padding-bottom: 50px;
+
+    .map__wrapper {
+      .map-header {
+        font-size: 36px;
+        padding-bottom: 20px;
+      }
+      .map-address {
+        font-family: 'Benton-Sans-Regular';
+        padding: 45px 0;
+        width: 175px;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .donation-button__wrapper {
+    display: flex;
+    align-items: center;
+    height: 150px;
+    justify-content: center;
+    padding-top: 76px;
+
+    .donation-button {
+      height: 36px;
+      width: min-content;
+      font-size: 30px;
+      font-style: normal;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #fff;
+      background-color: #00284d;
+      border-color: #00284d;
+      padding: 21px 30px;
+      border-radius: 4px;
+    }
+  }
+}

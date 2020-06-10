@@ -1,0 +1,48 @@
+.donate__container {
+  color: #00274c;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 5px;
+  padding: 140px 50px;
+  padding-top: 250px;
+  
+  .donate--text__wrapper {
+    font-size: 16px;
+    p {
+      letter-spacing: 0em;
+      line-height: 1.8em;
+    }
+
+    .donate--title {
+      text-align: center;
+      font-size: 70px;
+    }
+
+    .donate--sub-title {
+      margin-top: 15px;
+      margin-bottom: 25px;
+      font-size: 36px;
+    }
+
+    .donate--section {
+      &--text,
+      &--title {
+        line-height: 1.8em;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-size: 16px;
+      }
+
+      &--title { 
+        font-family: 'Benton-Sans-Bold', sans-serif;
+      }
+
+      &--address { 
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+}

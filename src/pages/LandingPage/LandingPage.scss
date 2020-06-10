@@ -1,0 +1,155 @@
+.lp__wrapper {
+  height: 100%;
+
+  .lp__top__wrapper {
+    position: relative;
+    height: 100%;
+    display: grid;
+    grid-template-areas:
+      '. lp_img'
+      'lp_header lp_img'
+      '. lp_img';
+
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+
+    .top__title__wrapper {
+      position: absolute;
+      text-align: center;
+      width: 100%;
+      top: 50%;
+
+      .title {
+        font-size: 50px;
+        color: #fff;
+        text-shadow: 2px 2px 3px rgba(0, 0, 3, 1);
+      }
+    }
+
+    .top_header__wrapper {
+      grid-area: lp_header;
+      display: flex;
+      justify-content: center;
+
+      .top_header {
+        text-transform: uppercase;
+        font-size: 36px;
+        width: 500px;
+        text-align: center;
+      }
+    }
+
+    .top-bg-Img {
+      grid-area: lp_img;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .lp__middle__wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    -webkit-box-align: center;
+
+    .middle_header__wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 1.3em;
+
+      .middle-content__header {
+        text-transform: uppercase;
+        font-size: 36px;
+        margin-bottom: 1.3em;
+      }
+
+      .middle-content__text {
+        text-align: center;
+        width: 75%;
+        font-size: 18px;
+        line-height: 30px;
+        margin-bottom: 1.3em;
+      }
+    }
+
+    .middle_imgs__wrapper {
+      display: flex;
+      justify-content: space-evenly;
+
+      .middle_img__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+
+        .middle_img {
+          width: 75%;
+          height: 75.14%;
+        }
+
+        .img__text {
+          text-align: justify;
+          width: 75%;
+          line-height: 19px;
+          padding-top: 10px;
+        }
+
+      }
+    }
+  }
+
+  .lp__bottom__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .bottom_img1 {
+      background-size: cover;
+      width: 100%;
+      height: 60vh;
+    }
+
+    .donation__wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 70vh; 
+
+      .donation-title {
+        text-transform: uppercase;
+        font-size: 36px;
+        margin-bottom: 1.3em;
+      }
+  
+      .donation-text {
+        width: 700px;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 16px;
+        letter-spacing: 0em;
+        line-height: 1.8em;
+        text-transform: none;
+        text-align: center;
+        margin-bottom: 2.8em;
+      }
+  
+      .donation-button {
+        height: 36px;
+        width: 403px;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: #fff;
+        background-color: #00284d;
+        border-color: #00284d;
+        padding: 21px 30px;
+        border-radius: 4px;
+      }
+    }
+  }
+}
