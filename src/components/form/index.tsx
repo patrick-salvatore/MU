@@ -1,7 +1,7 @@
 import { useState, memo } from 'react';
 import { FormProps } from './interfaces';
 
-const Form: React.FC<FormProps> = ({
+const Form: React.FC<FormProps<any>> = ({
   formFields,
   render,
   customHandleSubmit,

@@ -1,6 +1,6 @@
 import './nav.scss';
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import { SubMenu } from './submenu';
 import LogoSVG from './svg/logo2.svg';
@@ -42,7 +42,9 @@ const Navbar: React.FC = (): JSX.Element => {
     >
       <div className="logo__wrapper">
         <div className="logo">
-          <LogoSVG />
+          <Link to="/">
+            <LogoSVG />
+          </Link>
           <span className="title">
             FRIENDS OF <br />
             MERCYHURST ROWING

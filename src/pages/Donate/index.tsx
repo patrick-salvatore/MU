@@ -16,13 +16,6 @@ const TextSection = () => (
         the team. If you are giving a gift to the team via a route other than
         our online form and would like to make sure that it counts towards the
         Class Challenge, please email{' '}
-        <em>
-          <strong>both</strong>
-        </em>{' '}
-        <a href="mailto:vp@friendsofmercyhurstrowing.org">
-          <u>vp@friendsofmercyhurstrowing.org</u>
-        </a>{' '}
-        and{' '}
         <a href="treasurer@friendsofmercyhurstrowing.org">
           <u>treasurer@friendsofmercyhurstrowing.org</u>
         </a>{' '}

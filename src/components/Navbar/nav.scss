@@ -12,7 +12,7 @@
 
   &.sticky {
     animation: fadeIn 300ms;
-    background-color: #00284d;
+    background-color: #0071bc;
     padding-top: 0px;
 
     .logo__wrapper {
@@ -50,7 +50,7 @@
         -webkit-box-align: center;
         font-weight: 700;
         font-size: 18px;
-        color: #47ca12;
+        color: #22b573;
         outline: none;
         cursor: pointer;
 
@@ -59,12 +59,13 @@
         }
 
         .link__text--title {
+          font-size: 18px;
           padding-left: 25px;
         }
 
         .subMenu__contents {
           display: none;
-          background-color: #00284d;
+          background-color: #0071bc;
           flex-direction: column;
           align-items: inherit;
           color: #ffffff;
@@ -98,7 +99,7 @@
         font-size: 18px;
         color: #ffffff;
         outline: none;
-        color: #47ca12;
+        color: #22b573;
       }
     }
   }
@@ -139,7 +140,7 @@
       margin-top: 40px;
 
       .link {
-        color: #47ca12;
+        color: #22b573;
         outline: none;
         justify-self: start;
       }
@@ -150,7 +151,7 @@
       -webkit-box-align: center;
       font-weight: 700;
       font-size: 18px;
-      color: #47ca12;
+      color: #22b573;
       outline: none;
       cursor: pointer;
 
@@ -160,12 +161,12 @@
 
       .link__text--title {
         padding-left: 25px;
-        font-size: 20px;
+        font-size: 18px;
       }
 
       .subMenu__contents {
         display: none;
-        background-color: #00284d;
+        background-color: #0071bc;
         flex-direction: column;
         align-items: inherit;
         justify-content: center;
@@ -200,7 +201,7 @@
       font-weight: 700;
       font-size: 20px;
       outline: none;
-      color: #47ca12;
+      color: #22b573;
 
       &.sign-in {
         font-size: 20px;

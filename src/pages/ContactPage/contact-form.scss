@@ -4,9 +4,18 @@
     font-family: 'Manrope-Bold';
   }
 
-  .placeholder--form {
-    border: 1.3px solid rgb(58, 57, 57);
-    border-radius: 8px;
-    height: 100%;
+  .contact-form {
+    .form-input-wrapper {
+      .error-wrapper {
+        display: flex;
+        p {
+          color: #cc3b3b;
+        }
+
+        svg {
+          height: 20px;
+        }
+      }
+    }
   }
 }

@@ -17,9 +17,9 @@ const AboutPage: React.FC = (): JSX.Element => {
           <p className="text">
             Friends of Mercyhurst Rowing is a 501(c)(3) non-profit organization,
             representing the alumni and friends of the Mercyhurst University
-            Men&apos;s Rowing Team. Our members work together to support the
-            team and its mission to provide an environment in which the athletes
-            of the team can train, grow, and represent Mercyhurst University in
+            Rowing Team. Our members work together to support the team and its
+            mission to provide an environment in which the athletes of the team
+            can train, grow, and represent Mercyhurst University in
             intercollegiate competitions.
           </p>
         </div>

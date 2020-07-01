@@ -43,11 +43,10 @@ const LandingPage: React.FC<ILandingPageProps> = (): JSX.Element => {
               <p className="middle-content__text">
                 The Mercyhurst Rowing Association is a 501(c)(3) non-profit
                 organization representing the alumni and friends of the
-                University of Mercyhurst Men&apos;s Rowing Team. Our more than
-                members work together to support the team and its mission to
-                provide an environment in which the athletes of the team can
-                train, grow, and represent the University in intercollegiate
-                competition.
+                University of Mercyhurst Rowing Team. Our members work together
+                to support the team and its mission to provide an environment in
+                which the athletes of the team can train, grow, and represent
+                the University in intercollegiate competition.
               </p>
             </div>
             <div className="middle_imgs__wrapper">
@@ -77,9 +76,9 @@ const LandingPage: React.FC<ILandingPageProps> = (): JSX.Element => {
           <p className="donation-text">
             FOMR provides the necessary support and guidance to allow our
             ambitious Mercyhurst Men’s Rowing Team — comprised of hard student
-            athletes of the Meryhurst University Men&apos;s Rowing team — to
-            push competitive and athletic boundaries and seek new ways to race
-            and win.
+            athletes of the Meryhurst University Rowing team — to push
+            competitive and athletic boundaries and seek new ways to race and
+            win.
           </p>
           <Link to="/donate" className="donation-button">
             donate to the team

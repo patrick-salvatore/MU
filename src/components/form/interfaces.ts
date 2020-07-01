@@ -26,8 +26,8 @@ export interface FormFields {
   comment?: string;
 }
 
-export interface FormProps {
-  formFields: FormFields;
+export interface FormProps<T> {
+  formFields: T;
   render: Function;
   className?: string;
   customHandleSubmit?: (formFields: FormFields) => void;

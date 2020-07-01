@@ -36,8 +36,8 @@ export const Footer = (): JSX.Element => {
     <footer className="footer">
       <p className="text--green">
         Questions? Contact FOMR Vice President at{' '}
-        <a href="mailto:vp@friendsofmercyhurstrowing.org">
-          <u>vp@friendsofmercyhurstrowing.org</u>
+        <a href="mailto:info@friendsofmercyhustrowing.com">
+          <u>info@friendsofmercyhustrowing.com</u>
         </a>
       </p>
       <p className="text">

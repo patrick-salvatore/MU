@@ -6,8 +6,6 @@ import instagram3 from 'img/instagram/instagram3.png';
 import instagram4 from 'img/instagram/instagram4.png';
 import instagram5 from 'img/instagram/instagram5.png';
 import instagram6 from 'img/instagram/instagram6.png';
-import instagram7 from 'img/instagram/instagram7.png';
-import instagram8 from 'img/instagram/instagram8.png';
 
 import './instagramFeed.scss';
 
@@ -19,8 +17,6 @@ export const InstagramFeed: React.FC = (): JSX.Element => {
     { img: instagram4, url: 'https://www.instagram.com/p/B3hz6W-FbNm/' },
     { img: instagram5, url: 'https://www.instagram.com/p/BmhH7ADlb-8/' },
     { img: instagram6, url: 'https://www.instagram.com/p/BUme_I2ge0A/' },
-    { img: instagram7, url: 'https://www.instagram.com/p/BhzJTzolp16/' },
-    { img: instagram8, url: 'https://www.instagram.com/p/BqqdVBZlJJk/' },
   ];
 
   const openInstagramImg = (e: React.MouseEvent<HTMLDivElement>): void => {
@@ -28,8 +24,8 @@ export const InstagramFeed: React.FC = (): JSX.Element => {
 
     window.open(
       url,
-      '',
-      'menubar=yes,resizable=yes,scrollbars=yes,status=yes,width=750,height=750'
+      '_blank'
+      // 'menubar=yes,resizable=yes,scrollbars=yes,status=yes,width=750,height=750'
     );
   };
 
