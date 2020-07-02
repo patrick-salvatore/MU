@@ -1,11 +1,11 @@
 import './nav.scss';
 import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, RouteComponentProps } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import { SubMenu } from './submenu';
 import LogoSVG from './svg/logo2.svg';
 
-const Navbar: React.FC = (): JSX.Element => {
+const Navbar: React.FC<RouteComponentProps> = ({ location }): JSX.Element => {
   const [openSubMenu, setOpenSubMenu] = React.useState<boolean>(false);
   const [sticky, setSticky] = React.useState<boolean>(false);
   const navRef = React.useRef<HTMLDivElement>(null);
@@ -51,7 +51,13 @@ const Navbar: React.FC = (): JSX.Element => {
           </span>
         </div>
       </div>
-      <div className="nav-contents__wrapper">
+      <div
+        className="nav-contents__wrapper"
+        style={{
+          textShadow:
+            location.pathname === '/' ? '2px 2px 3px rgba(0, 0, 3, 1)' : '',
+        }}
+      >
         <NavLink
           className="link"
           activeClassName="link__active"

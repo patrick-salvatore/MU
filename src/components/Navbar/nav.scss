@@ -133,7 +133,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    text-shadow: 2px 2px 3px rgba(0, 0, 3, 1);
     background: transparent;
 
     .nav__user-section {
@@ -150,7 +149,6 @@
       position: relative;
       -webkit-box-align: center;
       font-weight: 700;
-      font-size: 18px;
       color: #22b573;
       outline: none;
       cursor: pointer;
@@ -161,7 +159,7 @@
 
       .link__text--title {
         padding-left: 25px;
-        font-size: 18px;
+        font-size: 20px;
       }
 
       .subMenu__contents {

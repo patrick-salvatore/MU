@@ -24,6 +24,7 @@ type FormInputType = {
   className?: string;
   error?: Error;
   as?: string;
+  sublabel?: string;
 };
 const FormInput: React.FC<FormInputType> = ({
   register,
@@ -31,6 +32,7 @@ const FormInput: React.FC<FormInputType> = ({
   className,
   error,
   as,
+  sublabel,
 }) => {
   const props = { ref: register, name, className };
   return (
@@ -40,6 +42,7 @@ const FormInput: React.FC<FormInputType> = ({
       ) : (
         <input className={className} name={name} ref={register} />
       )}
+      <span className="input-sublabel">{sublabel}</span>
       {error && <ErrorMessage error={error.message} />}
     </div>
   );
@@ -57,63 +60,89 @@ const ContactForm = (): JSX.Element => {
         formFields={contactFormInitalValues}
         render={({ register, handleSubmit, errors }): JSX.Element => (
           <form onSubmit={handleSubmit(onSubmit)} className="contact-form">
-            <div className="form-name-wrapper">
-              <h3>
-                Name<sup>*</sup>
-              </h3>
-              <FormInput
-                register={register({
-                  required: {
-                    value: true,
-                    message: 'Please enter your first name',
-                  },
-                })}
-                name="firstName"
-                error={errors.firstName}
-              />
-              <FormInput
-                register={register({
-                  required: {
-                    value: true,
-                    message: 'Please enter your last name',
-                  },
-                })}
-                name="lastName"
-                error={errors.lastName}
-              />
+            <div className="form-input-container">
+              <label
+                htmlFor="input--name"
+                className="form-input-container--label"
+              >
+                Name<span>*</span>
+              </label>
+              <div id="input--name" className="form-input-container--name">
+                <FormInput
+                  register={register({
+                    required: {
+                      value: true,
+                      message: 'Please enter your first name',
+                    },
+                  })}
+                  name="firstName"
+                  error={errors.firstName}
+                  sublabel="First Name"
+                />
+                <FormInput
+                  register={register({
+                    required: {
+                      value: true,
+                      message: 'Please enter your last name',
+                    },
+                  })}
+                  name="lastName"
+                  error={errors.lastName}
+                  sublabel="Last Name"
+                />
+              </div>
             </div>
-            <h3>
-              Email<sup>*</sup>
-            </h3>
-            <FormInput
-              register={register({
-                required: {
-                  value: true,
-                  message: 'Please enter your email',
-                },
-                pattern: {
-                  value: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
-                  message: 'Please enter a proper email',
-                },
-              })}
-              name="emailAddress"
-              error={errors.emailAddress}
-            />
-            <h3>
-              Message<sup>*</sup>
-            </h3>
-            <FormInput
-              as="textarea"
-              register={register({
-                required: {
-                  value: true,
-                  message: 'Please enter a message to your email',
-                },
-              })}
-              name="message"
-              error={errors.message}
-            />
-            <button type="submit">CLICK</button>
+            <div className="form-input-container">
+              <label
+                htmlFor="input--email"
+                className="form-input-container--label"
+              >
+                Email<span>*</span>
+              </label>
+              <div id="input--email" className="form-input-container--email">
+                <FormInput
+                  register={register({
+                    required: {
+                      value: true,
+                      message: 'Please enter your email',
+                    },
+                    pattern: {
+                      value: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+                      message: 'Please enter a proper email',
+                    },
+                  })}
+                  name="emailAddress"
+                  error={errors.emailAddress}
+                />
+              </div>
+            </div>
+            <div className="form-input-container">
+              <label
+                htmlFor="input--message"
+                className="form-input-container--label"
+              >
+                Message<span>*</span>
+              </label>
+              <div
+                id="input--message"
+                className="form-input-container--message"
+              >
+                <FormInput
+                  as="textarea"
+                  register={register({
+                    required: {
+                      value: true,
+                      message: 'Please enter a message to your email',
+                    },
+                  })}
+                  name="message"
+                  error={errors.message}
+                />
+              </div>
+            </div>
+            <button type="submit" className="contact-form--button">
+              SUBMIT
+            </button>
           </form>
         )}
       />

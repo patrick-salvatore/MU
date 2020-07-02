@@ -1,21 +1,125 @@
 .contact-form__wrapper {
+  display: grid;
+  padding: 0 17px;
+  grid-template-rows: auto 1fr;
+
   .contact-form-header {
     font-size: 36px;
     font-family: 'Manrope-Bold';
   }
 
   .contact-form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 60px;
+
+    .form-input-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+      width: 100%;
+      margin: 20px 0;
+      font-family: 'Manrope-Regular';
+
+      &--label {
+        font-size: 16px;
+      }
+
+      &--name {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+
+        .form-input-wrapper {
+          width: 100%;
+          margin-right: 4px;
+
+          input {
+            padding: 12px;
+            border: 1px solid #ccc;
+            background: #fafafa;
+          }
+
+          .input-sublabel {
+            color: #00274c;
+            margin-top: 5px;
+            font-size: 12px;
+          }
+
+          &:last-of-type {
+            margin-right: 0;
+            margin-left: 4px;
+          }
+        }
+      }
+
+      &--email {
+        .form-input-wrapper {
+          width: 100%;
+
+          input {
+            padding: 12px;
+            border: 1px solid #ccc;
+            background: #fafafa;
+          }
+        }
+      }
+
+      &--message {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+
+        .form-input-wrapper {
+          width: 100%;
+
+          textarea {
+            padding: 12px;
+            border: 1px solid #ccc;
+            background: #fafafa;
+            height: 115px;
+            resize: none;
+          }
+        }
+      }
+    }
+
     .form-input-wrapper {
+      display: flex;
+      flex-direction: column;
+
       .error-wrapper {
         display: flex;
+        align-items: center;
+
         p {
+          font-size: 13px;
           color: #cc3b3b;
         }
 
         svg {
-          height: 20px;
+          height: 13px;
+          margin-right: 5px;
         }
       }
+    }
+
+    &--button {
+      position: absolute;
+      bottom: -50px;
+      left: 60px;
+      background-color: #00274c;
+      border-color: #00274c;
+      color: #fff;
+      border: 0;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      border-radius: 4px;
+      padding: 10px 30px;
     }
   }
 }
