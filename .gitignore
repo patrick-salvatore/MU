@@ -29,4 +29,4 @@ yarn-error.log*
 src/react-app-env.d.ts
 
 /functions
-/netlify.toml
+netlify.toml
