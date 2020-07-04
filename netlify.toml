@@ -1,0 +1,10 @@
+[build]
+  functions = "functions/"
+
+[context.production]
+  publish = "dist/"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
