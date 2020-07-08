@@ -46,7 +46,7 @@ const LandingPage: React.FC<ILandingPageProps> = (): JSX.Element => {
                 University of Mercyhurst Rowing Team. Our members work together
                 to support the team and its mission to provide an environment in
                 which the athletes of the team can train, grow, and represent
-                the University in intercollegiate competition.
+                the university in intercollegiate competition.
               </p>
             </div>
             <div className="middle_imgs__wrapper">
@@ -75,7 +75,7 @@ const LandingPage: React.FC<ILandingPageProps> = (): JSX.Element => {
           <h1 className="donation-title">laker pride</h1>
           <p className="donation-text">
             FOMR provides the necessary support and guidance to allow our
-            ambitious Mercyhurst Men’s Rowing Team — comprised of hard student
+            ambitious, Mercyhurst Rowing Team — comprised of hard student
             athletes of the Meryhurst University Rowing team — to push
             competitive and athletic boundaries and seek new ways to race and
             win.

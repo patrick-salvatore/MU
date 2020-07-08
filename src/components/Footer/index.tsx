@@ -35,7 +35,7 @@ export const Footer = (): JSX.Element => {
   return (
     <footer className="footer">
       <p className="text--green">
-        Questions? Contact FOMR Vice President at{' '}
+        Questions? Contact us at{' '}
         <a href="mailto:info@friendsofmercyhustrowing.com">
           <u>info@friendsofmercyhustrowing.com</u>
         </a>
