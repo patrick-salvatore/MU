@@ -1,12 +1,13 @@
 import React from 'react';
-
+import { sendEmailApi } from 'api/send-email';
 import Form, { Register, Error } from 'components/form/_form';
 import Alert from 'components/form/alert.svg';
 import './contact-form.scss';
 
-const contactFormInitalValues = {
+const ContactFormInitalValues = {
   firstName: '',
   lastName: '',
+  subject: '',
   emailAddress: '',
   message: '',
 };
@@ -34,13 +35,18 @@ const FormInput: React.FC<FormInputType> = ({
   as,
   sublabel,
 }) => {
-  const props = { ref: register, name, className };
+  const props = { ref: register, name, className, autoComplete: 'off' };
   return (
     <div className="form-input-wrapper">
       {as ? (
         React.createElement(as as string, props)
       ) : (
-        <input className={className} name={name} ref={register} />
+        <input
+          className={className}
+          name={name}
+          ref={register}
+          autoComplete="off"
+        />
       )}
       <span className="input-sublabel">{sublabel}</span>
       {error && <ErrorMessage error={error.message} />}
@@ -49,7 +55,20 @@ const FormInput: React.FC<FormInputType> = ({
 };
 
 const ContactForm = (): JSX.Element => {
-  const onSubmit = values => console.log(values);
+  const onSubmit = (values: typeof ContactFormInitalValues) => {
+    const payload = Object.assign(
+      {},
+      {
+        senderEmail: values.emailAddress,
+        senderName: `${values.firstName} ${values.lastName}`,
+        emailSubject: values.subject,
+        message: values.message,
+      }
+    );
+
+    console.log(payload);
+    // sendEmailApi(payload)
+  };
 
   return (
     <div className="contact-form__wrapper ">
@@ -57,7 +76,7 @@ const ContactForm = (): JSX.Element => {
         REACH OUT TO US WITH ANY QUESTIONS
       </h1>
       <Form
-        formFields={contactFormInitalValues}
+        formFields={ContactFormInitalValues}
         render={({ register, handleSubmit, errors }): JSX.Element => (
           <form onSubmit={handleSubmit(onSubmit)} className="contact-form">
             <div className="form-input-container">
