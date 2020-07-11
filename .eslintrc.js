@@ -73,10 +73,15 @@ module.exports = {
         enforceForRenamedProperties: false,
       },
     ],
-    'no-param-reassign': 'off',
-    // 'compat/compat': 2,
+    // general
     'prettier/prettier': [2, { singleQuote: true, trailingComma: 'es5' }],
+    'no-param-reassign': 'off',
+
+    // typescript
+    "@typescript-eslint/no-var-requires": 0,
     '@typescript-eslint/interface-name-prefix' : [0],
+    '@typescript-eslint/explicit-function-return-type': 0,
+    // react
     'react/prop-types': [0],
     // react
     // 'react-hooks/rules-of-hooks': 'error',

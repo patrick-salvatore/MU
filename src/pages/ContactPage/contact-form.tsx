@@ -65,7 +65,7 @@ const ContactForm = (): JSX.Element => {
                 htmlFor="input--name"
                 className="form-input-container--label"
               >
-                Name<span>*</span>
+                Your Name<span>*</span>
               </label>
               <div id="input--name" className="form-input-container--name">
                 <FormInput
@@ -97,7 +97,7 @@ const ContactForm = (): JSX.Element => {
                 htmlFor="input--email"
                 className="form-input-container--label"
               >
-                Email<span>*</span>
+                Your Email Address<span>*</span>
               </label>
               <div id="input--email" className="form-input-container--email">
                 <FormInput
@@ -114,6 +114,20 @@ const ContactForm = (): JSX.Element => {
                   name="emailAddress"
                   error={errors.emailAddress}
                 />
+              </div>
+            </div>
+            <div className="form-input-container">
+              <label
+                htmlFor="input--subject"
+                className="form-input-container--label"
+              >
+                Subject
+              </label>
+              <div
+                id="input--subject"
+                className="form-input-container--subject"
+              >
+                <FormInput register={register} name="subject" />
               </div>
             </div>
             <div className="form-input-container">
