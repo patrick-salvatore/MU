@@ -75,9 +75,9 @@ const LandingPage: React.FC<ILandingPageProps> = (): JSX.Element => {
           <h1 className="donation-title">laker pride</h1>
           <p className="donation-text">
             FOMR provides the necessary support and guidance to allow our
-            ambitious, Mercyhurst Rowing Team — comprised of hard student
-            athletes of the Meryhurst University Rowing team — to push
-            competitive and athletic boundaries and seek new ways to race and
+            ambitious, Mercyhurst Rowing Team — comprised of hard working
+            student athletes of the Meryhurst University Rowing team — to push
+            competitive and athletic boundaries, seeking new ways to race and
             win.
           </p>
           <Link to="/donate" className="donation-button">

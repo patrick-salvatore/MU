@@ -2,7 +2,7 @@ import React from 'react';
 import './Donate.scss';
 import DonationForm from './donation-form';
 
-const TextSection = () => (
+const TextSection = (): JSX.Element => (
   <section className="donate--text__wrapper">
     <h1 className="donate--title">
       SUPPORT

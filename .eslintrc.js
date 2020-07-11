@@ -12,7 +12,7 @@ module.exports = {
     browser: true,
     jasmine: true,
     jest: true,
-    node: true,
+    es6: true
   },
   parserOptions: {
     ecmaVersion: 10, // Allows for the parsing of modern ECMAScript features
