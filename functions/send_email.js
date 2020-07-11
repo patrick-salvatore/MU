@@ -25,8 +25,8 @@ function addSendgridRecipient(client, email) {
   });
 }
 
-function sendWelcomeEmail(client, email, senderEmail, senderName, templateID) {
-  return new Promise((fulfill, reject) => {
+function sendEmail(client, email, senderEmail, senderName, templateID) {
+  return new Promise((resolve, reject) => {
     const data = {
       from: {
         email: senderEmail,
@@ -58,7 +58,7 @@ function sendWelcomeEmail(client, email, senderEmail, senderName, templateID) {
       .then(([response, body]) => {
         console.log(response.statusCode);
         console.log(body);
-        fulfill(response);
+        resolve(response);
       })
       .catch(error => reject(error));
   });
@@ -67,35 +67,23 @@ function sendWelcomeEmail(client, email, senderEmail, senderName, templateID) {
 exports.handler = function(event, context, callback) {
   const {
     SENDGRID_API_KEY,
-    SENDGRID_WELCOME_SENDER_EMAIL,
-    SENDGRID_WELCOME_SENDER_NAME,
-    SENDGRID_WELCOME_TEMPLATE_ID,
+    // eslint-disable-next-line no-undef
   } = process.env;
   const body = JSON.parse(event.body);
   const { email } = body;
-  const welcomeEmail = event.queryStringParameters.welcome_email === 'true';
 
   client.setApiKey(SENDGRID_API_KEY);
   addSendgridRecipient(client, email)
-    .then((response, body) => {
-      if (welcomeEmail) {
-        sendWelcomeEmail(
-          client,
-          email,
-          SENDGRID_WELCOME_SENDER_EMAIL,
-          SENDGRID_WELCOME_SENDER_NAME,
-          SENDGRID_WELCOME_TEMPLATE_ID
+    .then(() => {
+      sendEmail(client, email)
+        .then(response =>
+          callback(null, {
+            statusCode: response.statusCode,
+            body: email + ' added',
+          })
         )
-          .then(response =>
-            callback(null, {
-              statusCode: response.statusCode,
-              body: email + ' added',
-            })
-          )
-          .catch(err => callback(err, null));
-      } else {
-        callback(null, { statusCode: response.statusCode, body: '' });
-      }
+        .catch(err => callback(err, null));
+      // callback(null, { statusCode: response.statusCode, body: 'test' });
     })
     .catch(err => callback(err, null));
 };
