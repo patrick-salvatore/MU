@@ -55,7 +55,7 @@ const FormInput: React.FC<FormInputType> = ({
 };
 
 const ContactForm = (): JSX.Element => {
-  const onSubmit = (values: typeof ContactFormInitalValues) => {
+  const onSubmit = async (values: typeof ContactFormInitalValues) => {
     const payload = Object.assign(
       {},
       {
@@ -66,7 +66,8 @@ const ContactForm = (): JSX.Element => {
       }
     );
 
-    sendEmailApi(payload);
+    const { body } = await sendEmailApi(payload);
+    console.log(body);
   };
 
   return (

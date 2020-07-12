@@ -33,16 +33,20 @@ exports.handler = async function(event) {
     body: mail.toJSON(),
   });
 
+  let _error;
   sg.API(request, function(error) {
     if (error) {
-      return {
-        statusCode: 500,
-        body:
-          'Oops, something went wrong! Please contact us directly at info@friendsofmercyhurstrowing.com',
-      };
+      _error = error;
     }
   });
 
+  if (_error) {
+    return {
+      statusCode: 500,
+      body:
+        'Oops, something went wrong! Please contact us directly at info@friendsofmercyhurstrowing.com',
+    };
+  }
   return {
     statusCode: 200,
     body: 'Thank you, your email has sent',
