@@ -1,12 +1,32 @@
+@keyframes slide-up {
+  0% {
+    bottom: -100%;
+  }
+
+  50% {
+    bottom: -25px;
+  }
+
+  100% {
+    bottom: -100%;
+  }
+}
+
 .notfications__wrapper {
   position: fixed;
   bottom: -25px;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 36%;
+  transform: translateY(60%);
   z-index: 1400;
+
+  &.slide-up {
+    transform: translateY(-60%);
+    transition: linear 400ms;
+  }
 
   .notification {
     &__wrapper {
+      position: relative;
       min-width: 375px;
       height: 55px;
       display: flex;
@@ -27,6 +47,10 @@
       &.error {
         background-color: #180605;
         color: #e5a39f;
+
+        svg {
+          fill: #e5a39f;
+        }
       }
 
       &.info {
@@ -44,6 +68,11 @@
         height: 20px;
         margin-right: 5px;
       }
+    }
+
+    &__close-icon {
+      position: absolute;
+      right: 15px;
     }
   }
 }

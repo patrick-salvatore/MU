@@ -73,22 +73,20 @@ const ContactForm = (): JSX.Element => {
       const res = await sendEmailApi(payload);
       console.log(res.data);
 
-      // setGlobalNotification &&
-      //   setGlobalNotification({
-      //     messages: [{ message: res, type: 'success' }],
-      //     // display: true,
-      //   });
+      if (res.data) {
+        setGlobalNotification &&
+          setGlobalNotification({
+            messages: [{ message: res.data, type: 'success' }],
+          });
+      }
     } catch (e) {
       console.log(e);
 
-      // setGlobalNotification &&
-      //   setGlobalNotification({
-      //     messages: [{ message: res.body, type: 'error' }],
-      //     // display: true,
-      //   });
+      setGlobalNotification &&
+        setGlobalNotification({
+          messages: [{ message: '', type: 'error' }],
+        });
     }
-
-    return;
   };
 
   return (
