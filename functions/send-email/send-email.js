@@ -36,21 +36,25 @@ exports.handler = async function(event) {
   });
 
   return new Promise((res, rej) => {
-    sg.API(request, function(error) {
+    sg.API(request, function(error, response) {
       if (error) {
         // console.log(error.response.body);
         rej({
           statusCode: 500,
-          body:
-            'Oops, something went wrong! Please contact us directly at info@friendsofmercyhurstrowing.com',
-          error,
+          body: {
+            message:
+              'Oops, something went wrong! Please contact us directly at info@friendsofmercyhurstrowing.com',
+            error,
+          },
         });
       }
       // console.log(response.body);
       res({
         statusCode: 500,
-        body:
-          'Oops, something went wrong! Please contact us directly at info@friendsofmercyhurstrowing.com',
+        body: {
+          message: 'Thank you! Your email has been delivered',
+          response,
+        },
       });
     });
   });
