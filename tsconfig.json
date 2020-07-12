@@ -3,7 +3,7 @@
     "plugins": [{ "name": "typescript-tslint-plugin" }],
     "outDir": "./build",
     "sourceMap": true,
-    "baseUrl": ".",
+    "baseUrl": "./",
     "paths": {
       "@pages/*": ["src/pages/*"],
       "@routes/*": ["src/routes/*"],
