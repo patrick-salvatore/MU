@@ -5,13 +5,13 @@ import './LandingPage.scss';
 import {
   ColumnContainer,
   FullPageContainer,
-} from 'styledComponents/containers';
-import { InstagramFeed } from 'components/InstagramFeed';
+} from '@styledComponents/containers';
+import { InstagramFeed } from '@components/InstagramFeed';
 
-import lpBgImg from 'img/landing-page.png';
-import oars from 'img/oars2.png';
-import whoWeAreImg1 from 'img/whoWeAreImg1.jpg';
-import whoWeAreImg2 from 'img/received_10204283795090061.png';
+import lpBgImg from '@img/landing-page.png';
+import oars from '@img/oars2.png';
+import whoWeAreImg1 from '@img/whoWeAreImg1.jpg';
+import whoWeAreImg2 from '@img/received_10204283795090061.png';
 
 interface ILandingPageProps {
   scrollPosition: any;

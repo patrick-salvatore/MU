@@ -1,13 +1,11 @@
 import React from 'react';
-import { useGlobalContext } from '../../providers/global';
+import { useGlobalContext } from '@providers/global';
 import './styles.scss';
 
-import AlertIcon from 'components/form/alert.svg';
+import AlertIcon from '@components/form/alert.svg';
 import SuccessIcon from './check-mark.svg';
 
-type TypeClass = 'success' | 'error' | 'info';
-type MessageType = { message: string; type: TypeClass };
-const Message: React.FC<MessageType> = ({ message, type }) => {
+const Message = ({ message, type }) => {
   let messageTypeClass;
   let icon;
 
@@ -33,16 +31,18 @@ const Message: React.FC<MessageType> = ({ message, type }) => {
   );
 };
 
-const Notification = props => {
+const Notification = () => {
   const { notifications } = useGlobalContext();
 
-  console.log(notifications);
-  // return <>{notification.display && <>TEST</>}</>;
   return (
     <>
-      {notifications.display && (
-        <div className={`notfications__wrapper`}>TEST</div>
-      )}
+      {notifications.messages.length > 0 ? (
+        <div className={`notfications__wrapper`}>
+          {notifications.messages.map(({ message, type }, i) => (
+            <Message message={message} type={type} key={`${type}-${i}`} />
+          ))}
+        </div>
+      ) : null}
     </>
   );
 };

@@ -12,7 +12,7 @@ import {
   faTwitter,
   faInstagram,
 } from '@fortawesome/free-brands-svg-icons';
-import { AnchorTag } from 'components/anchorTag/anchorTag';
+import { AnchorTag } from '@components/anchorTag/anchorTag';
 
 library.add(faFacebook, faTwitter, faInstagram);
 

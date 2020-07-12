@@ -1,6 +1,49 @@
 .notfications__wrapper {
   position: fixed;
-  bottom: 0;
-  right: 50%;
+  bottom: -25px;
+  left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 1400;
+
+  .notification {
+    &__wrapper {
+      min-width: 375px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+      margin-top: 10px;
+
+      &.success {
+        background-color: #071007;
+        color: #b5ddb7;
+
+        svg {
+          fill: #b5ddb7;
+        }
+      }
+
+      &.error {
+        background-color: #180605;
+        color: #e5a39f;
+      }
+
+      &.info {
+        background-color: #030d18;
+        color: #a6d5fa;
+      }
+
+      p {
+        font-size: 13px;
+        margin-left: 8px;
+      }
+
+      svg {
+        height: 15px;
+        height: 20px;
+        margin-right: 5px;
+      }
+    }
+  }
 }

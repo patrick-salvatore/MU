@@ -1,11 +1,11 @@
 import React from 'react';
-import Form from 'components/form';
+import Form from '@components/form';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Link } from 'react-router-dom';
-import { FullPageContainer } from 'styledComponents/containers';
+import { FullPageContainer } from '@styledComponents/containers';
 import './Newsletter.scss';
 
-import newsletterImg from 'img/newsletter.jpg';
+import newsletterImg from '@img/newsletter.jpg';
 
 const initialFormState = {
   firstName: '',

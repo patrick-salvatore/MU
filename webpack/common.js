@@ -46,15 +46,17 @@ const optimization = {
 const resolve = {
   extensions: ['.js', '.jsx', '.ts', '.tsx', '.scss', '.css'],
   alias: {
-    hooks: path.resolve(dirName, 'src', 'hooks'),
-    components: path.resolve(dirName, 'src', 'components'),
-    scss: path.resolve(dirName, 'src', 'scss'),
-    pages: path.resolve(dirName, 'src', 'pages'),
-    routes: path.resolve(dirName, 'src', 'routes'),
-    styledComponents: path.resolve(dirName, 'src', 'styledComponents'),
-    utils: path.resolve(dirName, 'src', 'utils'),
-    img: path.resolve(dirName, 'public', 'img'),
-    fonts: path.resolve(dirName, 'public', 'fonts'),
+    '@hooks': path.resolve(dirName, 'src', 'hooks'),
+    '@components': path.resolve(dirName, 'src', 'components'),
+    '@api': path.resolve(dirName, 'src', 'api'),
+    '@providers': path.resolve(dirName, 'src', 'providers'),
+    '@scss': path.resolve(dirName, 'src', 'scss'),
+    '@pages': path.resolve(dirName, 'src', 'pages'),
+    '@routes': path.resolve(dirName, 'src', 'routes'),
+    '@styledComponents': path.resolve(dirName, 'src', 'styledComponents'),
+    '@utils': path.resolve(dirName, 'src', 'utils'),
+    '@img': path.resolve(dirName, 'public', 'img'),
+    '@fonts': path.resolve(dirName, 'public', 'fonts'),
   },
 };
 

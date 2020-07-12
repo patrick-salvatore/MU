@@ -1,10 +1,12 @@
+export type TypeClass = 'success' | 'error' | 'info' | null;
+
 export type GlobalNotificationType = {
   message: string | null;
-  type: string | null;
+  type: TypeClass;
 };
 
 export type GlobalNotificationStateType = {
-  display: boolean;
+  // display: boolean;
   messages: GlobalNotificationType[];
 };
 

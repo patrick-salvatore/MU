@@ -1,11 +1,11 @@
 import React from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import instagram1 from 'img/instagram/instagram1.png';
-import instagram2 from 'img/instagram/instagram2.png';
-import instagram3 from 'img/instagram/instagram3.png';
-import instagram4 from 'img/instagram/instagram4.png';
-import instagram5 from 'img/instagram/instagram5.png';
-import instagram6 from 'img/instagram/instagram6.png';
+import instagram1 from '@img/instagram/instagram1.png';
+import instagram2 from '@img/instagram/instagram2.png';
+import instagram3 from '@img/instagram/instagram3.png';
+import instagram4 from '@img/instagram/instagram4.png';
+import instagram5 from '@img/instagram/instagram5.png';
+import instagram6 from '@img/instagram/instagram6.png';
 
 import './instagramFeed.scss';
 

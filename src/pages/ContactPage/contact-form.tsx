@@ -1,5 +1,5 @@
 import React from 'react';
-import { sendEmailApi } from '../../api/send-email';
+import { sendEmailApi } from '@api/send-email';
 import Form, { Register, Error } from '@components/form/_form';
 import Alert from '@components/form/alert.svg';
 import './contact-form.scss';
@@ -69,24 +69,26 @@ const ContactForm = (): JSX.Element => {
       }
     );
 
-    const res = await sendEmailApi(payload);
+    try {
+      const res = await sendEmailApi(payload);
+      console.log(res.data);
 
-    if (res.error) {
-      setGlobalNotification &&
-        setGlobalNotification({
-          messages: [{ message: res.body, type: 'error' }],
-          display: true,
-        });
+      // setGlobalNotification &&
+      //   setGlobalNotification({
+      //     messages: [{ message: res, type: 'success' }],
+      //     // display: true,
+      //   });
+    } catch (e) {
+      console.log(e);
 
-      return;
+      // setGlobalNotification &&
+      //   setGlobalNotification({
+      //     messages: [{ message: res.body, type: 'error' }],
+      //     // display: true,
+      //   });
     }
-    setGlobalNotification &&
-      setGlobalNotification({
-        messages: [{ message: res.body, type: 'sucess' }],
-        display: true,
-      });
 
-    console.log(res);
+    return;
   };
 
   return (

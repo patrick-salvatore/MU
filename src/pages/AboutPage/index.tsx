@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import './about-page.scss';
 
-import about from 'img/about.png';
+import about from '@img/about.png';
 
 const AboutPage: React.FC = (): JSX.Element => {
   return (

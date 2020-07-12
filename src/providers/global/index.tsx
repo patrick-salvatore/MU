@@ -6,7 +6,10 @@ import {
 } from './types';
 
 const initialGlobalState = {
-  notifications: { messages: [{ message: null, type: null }], display: false },
+  notifications: {
+    messages: [],
+    // display: false,
+  },
 };
 
 const GlobalContext = React.createContext<IGlobalDataContext>(

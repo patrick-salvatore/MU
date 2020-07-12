@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { PageContainer } from 'styledComponents/containers';
+import { PageContainer } from '@styledComponents/containers';
 import ContactEmailForm from './contact-form';
 
 import './ContactPage.scss';
