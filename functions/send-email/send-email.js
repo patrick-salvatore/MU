@@ -1,5 +1,5 @@
-require('dotenv').config();
 const helper = require('sendgrid').mail;
+require('dotenv').config();
 
 exports.handler = async function(event) {
   const payload = JSON.parse(event.body);
@@ -23,6 +23,8 @@ exports.handler = async function(event) {
     <p style='font-size:24px'>${payload.message}</p>
   `;
 
+  console.log(process.env);
+
   const mailContent = new helper.Content('text/html', content);
   const mail = new helper.Mail(fromEmail, subject, toEmail, mailContent);
   const sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
@@ -33,22 +35,28 @@ exports.handler = async function(event) {
     body: mail.toJSON(),
   });
 
-  let _error;
-  sg.API(request, function(error) {
-    if (error) {
-      _error = error;
-    }
+  return new Promise((res, rej) => {
+    sg.API(request, function(error) {
+      if (error) {
+        // console.log(error.response.body);
+        rej({
+          statusCode: 500,
+          body:
+            'Oops, something went wrong! Please contact us directly at info@friendsofmercyhurstrowing.com',
+          error,
+        });
+      }
+      // console.log(response.body);
+      res({
+        statusCode: 500,
+        body:
+          'Oops, something went wrong! Please contact us directly at info@friendsofmercyhurstrowing.com',
+      });
+    });
   });
 
-  if (_error) {
-    return {
-      statusCode: 500,
-      body:
-        'Oops, something went wrong! Please contact us directly at info@friendsofmercyhurstrowing.com',
-    };
-  }
-  return {
-    statusCode: 200,
-    body: 'Thank you, your email has sent',
-  };
+  // return {
+  //   statusCode: 200,
+  //   body: 'yuck',
+  // };
 };

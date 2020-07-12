@@ -66,8 +66,8 @@ const ContactForm = (): JSX.Element => {
       }
     );
 
-    const { body } = await sendEmailApi(payload);
-    console.log(body);
+    const res = await sendEmailApi(payload);
+    console.log(res);
   };
 
   return (

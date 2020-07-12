@@ -25,8 +25,8 @@ const Newsletter: React.FC = (): JSX.Element => {
         <div className="nl-form__wrapper">
           <h2 className="form--header">FOMR NEWSLETTER</h2>
           <p>
-            Fill out the form below to stay up to date with MRA news about the
-            team and alumn!
+            Fill out the form below to stay up to date with MU rowing news about
+            the team and alumn!
           </p>
           <p>
             We will not share your information with anyone and will only use it
