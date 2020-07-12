@@ -41,7 +41,7 @@ exports.handler = async function(event) {
   return new Promise((res, rej) => {
     sg.API(request, function(error) {
       if (error) {
-        // console.log(error.response.body);
+        console.log(error.response.body);
         rej({
           statusCode: 500,
           body:
