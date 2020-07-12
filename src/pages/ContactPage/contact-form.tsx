@@ -1,5 +1,5 @@
 import React from 'react';
-import { sendEmailApi } from 'api/send-email';
+import { sendEmailApi } from '../../api/send-email';
 import Form, { Register, Error } from 'components/form/_form';
 import Alert from 'components/form/alert.svg';
 import './contact-form.scss';
@@ -66,8 +66,7 @@ const ContactForm = (): JSX.Element => {
       }
     );
 
-    console.log(payload);
-    // sendEmailApi(payload)
+    sendEmailApi(payload);
   };
 
   return (

@@ -9,6 +9,7 @@
       "routes/*": ["src/routes/*"],
       "hooks/*": ["./src/hooks/*"],
       "components/*": ["./src/components/*"],
+      "providers/*": ["./src/providers/*"],
       "api/*": ["./src/api/*"],
       "utils/*": ["./src/utils/*"],
       "styledComponents/*": ["./src/styledComponents/*"],

@@ -33,4 +33,4 @@ const AboutPage: React.FC = (): JSX.Element => {
   );
 };
 
-export default AboutPage;
+export default React.memo(AboutPage);

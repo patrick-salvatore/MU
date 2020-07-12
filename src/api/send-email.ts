@@ -8,5 +8,9 @@ export type SendEmailPayload = {
   emailSubject: string;
 };
 
-export const sendEmailApi = (payload: SendEmailPayload) =>
+export const sendEmailApi = (payload: SendEmailPayload) => {
   axios.post(sendEmailPath, payload, {}).then(res => res.data);
+  // axios
+  //   .post('http://localhost:8888/api/send-email', payload, {})
+  //   .then(res => res.data);
+};

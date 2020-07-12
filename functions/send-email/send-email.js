@@ -1,56 +1,50 @@
-const client = require('@sendgrid/mail');
 require('dotenv').config();
-
-async function sendEmail({
-  client,
-  message,
-  senderEmail,
-  senderName,
-  emailSubject,
-}) {
-  const data = {
-    from: {
-      email: senderEmail,
-      name: senderName,
-    },
-    subject: emailSubject,
-    to: 'info@friendsofmercyhurstrowing.com',
-    html: `Hi, FOMR 
-            <br/>Message: ${message} 
-            <br/>Sincerely: ${senderName}`,
-  };
-
-  try {
-    const emailRes = await client.send(data);
-    console.log({ emailRes });
-    return emailRes;
-  } catch (e) {
-    return e;
-  }
-}
+const helper = require('sendgrid').mail;
 
 exports.handler = async function(event) {
-  const { SENDGRID_API_KEY } = process.env;
+  const payload = JSON.parse(event.body);
 
-  try {
-    await client.setApiKey(SENDGRID_API_KEY);
-    const body = JSON.parse(event.body);
+  const fromEmail = new helper.Email('info@friendsofmercyhurstrowing.com');
+  const toEmail = new helper.Email('info@friendsofmercyhurstrowing.com');
+  const subject = payload.emailSubject || 'Contact From Submission';
 
-    const { message, senderEmail, senderName, emailSubject } = body;
+  const date = new Date();
+  const content = `
+    Form Submitted at ${date}
+    <ul>
+      <li>
+        name: ${payload.senderName}
+      </li>
+      <li>
+        reply to: ${payload.senderEmail}
+      </li>
+    </ul>
+    --------------------------------
+    <p style='font-size:24px'>${payload.message}</p>
+  `;
 
-    const { response, code } = await sendEmail({
-      client,
-      message,
-      senderEmail,
-      senderName,
-      emailSubject,
-    });
+  const mailContent = new helper.Content('text/html', content);
+  const mail = new helper.Mail(fromEmail, subject, toEmail, mailContent);
+  const sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
 
-    return { statusCode: code, body: response.body };
-  } catch (e) {
-    return {
-      statusCode: 500,
-      body: e,
-    };
-  }
+  const request = sg.emptyRequest({
+    method: 'POST',
+    path: '/v3/mail/send',
+    body: mail.toJSON(),
+  });
+
+  sg.API(request, function(error) {
+    if (error) {
+      return {
+        statusCode: 500,
+        body:
+          'Oops, something went wrong! Please contact us directly at info@friendsofmercyhurstrowing.com',
+      };
+    }
+  });
+
+  return {
+    statusCode: 200,
+    body: 'Thank you, your email has sent',
+  };
 };

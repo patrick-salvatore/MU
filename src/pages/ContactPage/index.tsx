@@ -40,4 +40,4 @@ const Contactpage: React.FC = (): JSX.Element => {
   );
 };
 
-export default Contactpage;
+export default React.memo(Contactpage);

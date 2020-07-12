@@ -17,6 +17,7 @@
 
 html,
 body {
+  position: relative;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -24,7 +25,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #fff;
   color: #0071bc;
-
 }
 
 h1,
@@ -37,29 +37,29 @@ h5 {
 }
 
 h1 {
-  font-family: "Manrope-Bold", sans-serif;
+  font-family: 'Manrope-Bold', sans-serif;
 }
 
 h2 {
-  font-family: "Manrope-Regular", sans-serif;
+  font-family: 'Manrope-Regular', sans-serif;
 }
 
 h3 {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 h4 {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 200;
 }
 
 h5 {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 a,
 div {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 a {
