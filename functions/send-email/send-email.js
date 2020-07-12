@@ -4,8 +4,13 @@ require('dotenv').config();
 exports.handler = async function(event) {
   const payload = JSON.parse(event.body);
 
+  console.log(process.env.SENDGRID_API_KEY);
+
   const fromEmail = new helper.Email('info@friendsofmercyhurstrowing.com');
-  const toEmail = new helper.Email('info@friendsofmercyhurstrowing.com');
+  const toEmail = new helper.Email(
+    'info@friendsofmercyhurstrowing.com',
+    payload.senderName
+  );
   const subject = payload.emailSubject || 'Contact From Submission';
 
   const date = new Date();
@@ -23,8 +28,6 @@ exports.handler = async function(event) {
     <p style='font-size:24px'>${payload.message}</p>
   `;
 
-  console.log(process.env);
-
   const mailContent = new helper.Content('text/html', content);
   const mail = new helper.Mail(fromEmail, subject, toEmail, mailContent);
   const sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
@@ -41,20 +44,14 @@ exports.handler = async function(event) {
         // console.log(error.response.body);
         rej({
           statusCode: 500,
-          body: {
-            message:
-              'Oops, something went wrong! Please contact us directly at info@friendsofmercyhurstrowing.com',
-            error,
-          },
+          body:
+            'Oops, something went wrong! Please contact us directly at info@friendsofmercyhurstrowing.com',
         });
       }
       // console.log(response.body);
       res({
-        statusCode: 500,
-        body: {
-          message: 'Thank you! Your email has been delivered',
-          response,
-        },
+        statusCode: 200,
+        body: 'Thank you! Your email has been delivered',
       });
     });
   });

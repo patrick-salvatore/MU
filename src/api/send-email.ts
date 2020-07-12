@@ -10,5 +10,5 @@ export type SendEmailPayload = {
 
 export const sendEmailApi = async (payload: SendEmailPayload) => {
   const res = await axios.post(sendEmailPath, payload, {});
-  return res;
+  return res.data;
 };

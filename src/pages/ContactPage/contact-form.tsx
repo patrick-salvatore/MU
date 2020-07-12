@@ -1,8 +1,9 @@
 import React from 'react';
 import { sendEmailApi } from '../../api/send-email';
-import Form, { Register, Error } from 'components/form/_form';
-import Alert from 'components/form/alert.svg';
+import Form, { Register, Error } from '@components/form/_form';
+import Alert from '@components/form/alert.svg';
 import './contact-form.scss';
+import { useGlobalContext } from '@providers/global/index';
 
 const ContactFormInitalValues = {
   firstName: '',
@@ -55,6 +56,8 @@ const FormInput: React.FC<FormInputType> = ({
 };
 
 const ContactForm = (): JSX.Element => {
+  const { setGlobalNotification } = useGlobalContext();
+
   const onSubmit = async (values: typeof ContactFormInitalValues) => {
     const payload = Object.assign(
       {},
@@ -67,6 +70,22 @@ const ContactForm = (): JSX.Element => {
     );
 
     const res = await sendEmailApi(payload);
+
+    if (res.error) {
+      setGlobalNotification &&
+        setGlobalNotification({
+          messages: [{ message: res.body, type: 'error' }],
+          display: true,
+        });
+
+      return;
+    }
+    setGlobalNotification &&
+      setGlobalNotification({
+        messages: [{ message: res.body, type: 'sucess' }],
+        display: true,
+      });
+
     console.log(res);
   };
 

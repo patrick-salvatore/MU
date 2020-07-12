@@ -36,6 +36,7 @@ const Message: React.FC<MessageType> = ({ message, type }) => {
 const Notification = props => {
   const { notifications } = useGlobalContext();
 
+  console.log(notifications);
   // return <>{notification.display && <>TEST</>}</>;
   return (
     <>
