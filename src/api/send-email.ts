@@ -9,4 +9,7 @@ export type SendEmailPayload = {
 };
 
 export const sendEmailApi = async (payload: SendEmailPayload) =>
-  axios.post(sendEmailPath, payload, {}).then(res => res);
+  axios
+    .post(sendEmailPath, payload, {})
+    .then(res => res)
+    .catch(e => e);
