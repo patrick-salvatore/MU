@@ -71,8 +71,6 @@ const ContactForm = (): JSX.Element => {
 
     try {
       const res = await sendEmailApi(payload);
-      console.log(res.data);
-
       if (res.data) {
         setGlobalNotification &&
           setGlobalNotification({
@@ -80,11 +78,11 @@ const ContactForm = (): JSX.Element => {
           });
       }
     } catch (e) {
-      console.log(e.message.body);
+      console.log(e.body);
 
       setGlobalNotification &&
         setGlobalNotification({
-          messages: [{ message: e.message.body, type: 'error' }],
+          messages: [{ message: e.body, type: 'error' }],
         });
     }
   };
