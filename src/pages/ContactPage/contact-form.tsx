@@ -58,7 +58,10 @@ const FormInput: React.FC<FormInputType> = ({
 const ContactForm = (): JSX.Element => {
   const { setGlobalNotification } = useGlobalContext();
 
-  const onSubmit = async (values: typeof ContactFormInitalValues) => {
+  const onSubmit = async (
+    values: typeof ContactFormInitalValues,
+    event: React.BaseSyntheticEvent
+  ) => {
     const payload = Object.assign(
       {},
       {
@@ -72,12 +75,14 @@ const ContactForm = (): JSX.Element => {
     try {
       const res = await sendEmailApi(payload);
       if (res.data) {
+        event.target.reset();
         setGlobalNotification &&
           setGlobalNotification({
             messages: [{ message: res.data, type: 'success' }],
           });
       }
     } catch (e) {
+      event.target.reset();
       setGlobalNotification &&
         setGlobalNotification({
           messages: [
