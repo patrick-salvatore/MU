@@ -80,11 +80,11 @@ const ContactForm = (): JSX.Element => {
           });
       }
     } catch (e) {
-      console.log(e);
+      console.log(e.message.body);
 
       setGlobalNotification &&
         setGlobalNotification({
-          messages: [{ message: '', type: 'error' }],
+          messages: [{ message: e.message.body, type: 'error' }],
         });
     }
   };
