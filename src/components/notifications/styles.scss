@@ -1,7 +1,7 @@
 .notfications__wrapper {
   position: fixed;
   bottom: -25px;
-  left: 36%;
+  left: 32%;
   transform: translateY(60%);
   z-index: 1400;
 
@@ -13,7 +13,8 @@
   .notification {
     &__wrapper {
       position: relative;
-      min-width: 375px;
+      min-width: 490px;
+      text-align: center;
       height: 55px;
       display: flex;
       align-items: center;
@@ -36,6 +37,10 @@
 
         svg {
           fill: #e5a39f;
+        }
+
+        p {
+          max-width: 375px;
         }
       }
 

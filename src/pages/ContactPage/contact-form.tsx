@@ -78,11 +78,15 @@ const ContactForm = (): JSX.Element => {
           });
       }
     } catch (e) {
-      console.log(e.body);
-
       setGlobalNotification &&
         setGlobalNotification({
-          messages: [{ message: e.body, type: 'error' }],
+          messages: [
+            {
+              message:
+                'Oops, something went wrong! Please contact us directly at info@friendsofmercyhurstrowing.com',
+              type: 'error',
+            },
+          ],
         });
     }
   };

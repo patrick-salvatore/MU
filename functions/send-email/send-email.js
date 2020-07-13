@@ -31,7 +31,6 @@ exports.handler = async function(event) {
   const mailContent = new helper.Content('text/html', content);
   const mail = new helper.Mail(fromEmail, subject, toEmail, mailContent);
   const sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
-  // const sg = require('sendgrid')('');
 
   const request = sg.emptyRequest({
     method: 'POST',
@@ -49,16 +48,10 @@ exports.handler = async function(event) {
             'Oops, something went wrong! Please contact us directly at info@friendsofmercyhurstrowing.com',
         });
       }
-      // console.log(response.body);
       res({
         statusCode: 200,
         body: 'Thank you! Your email has been delivered',
       });
     });
   });
-
-  // return {
-  //   statusCode: 200,
-  //   body: 'yuck',
-  // };
 };
