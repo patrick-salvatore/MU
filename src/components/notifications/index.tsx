@@ -26,7 +26,7 @@ const Message = ({ message, type, closeNotification }) => {
 
   return (
     <div className={`notification__wrapper ${messageTypeClass}`}>
-      {React.createElement(icon)}
+      {icon && React.createElement(icon)}
       <p className="notification__name">{message}</p>
       <span className="notification__close-icon">
         <CloseIcon onClick={closeNotification} />
