@@ -43,7 +43,7 @@ export const MEMBERS = [
     memberImg: bernie,
     name: 'Bernardo Ramirez',
     gradYear: `17`,
-    title: 'Finace',
+    title: 'Finance',
     bio: {
       1: `Bernardo graduated from Mercyhurst University in 2017, where he double majored in Finance and Competitive Business Intelligence with a minor in Accounting. During his time in Mercyhurst, he was a member of the Varsity Lightweight Rowing Program and a founding member and president of Laker Asset Management Club, a student-directed investment fund that invests a portion of the university’s endowment.`,
       2: `Bernardo’s goal is to continue being involved and helping with the development of Mercyhurst University and the broader Erie Community. He is very excited to see what can be achieved in the years to come.`,
@@ -62,22 +62,22 @@ export const MEMBERS = [
     // email: 'president@friendsofmercyhurstrowing.com',
   },
   {
+    memberImg: pat,
+    name: 'Patrick Salvatore',
+    gradYear: `18`,
+    title: 'IT/Web',
+    bio: {
+      1: `Pat graduated from Mercyhurst University in 2018 and is head of technology for FOMR. During his time at Mercyhurst, he majored and received a Bachelor’s of Science in Biochemistry from the Zurn School. During his four years he was a member of the men’s   lightweight rowing program, earning a bronze and gold medal for MU at the 2017 and 2018 Dad Vail Regatta. Since graduating from Mercyhurst, Pat now is a software developer at North Western Mutual building financial planning software for financial reps. under the North Western Mutual. Pat also works at Clinical.ly building software that provides solutions to the clinical research industry and helping research facilities focus on conducting studies as efficiently as possible.`,
+    },
+    // email: 'president@friendsofmercyhurstrowing.com',
+  },
+  {
     memberImg: milos,
     name: 'Milos Veres',
     gradYear: `16`,
     title: 'Board Member',
     bio: {
       1: `Milos graduated from Mercyhurst in 2016 and 2019. While at Hurst Milos studied Hospitality Management for his BA and Data Science for his MS. Four year varsity member remembers his time at Mercyhurst as a rower and as a graduate assistant later on with many wonderful memories including the Guinness world record 10 men team that rowed the greatest distance in 24 hours. Friendships that he was lucky to create throughout his time at Mercyhurst is one of the reasons why the US is his second home. Milos is currently living and working in Germany.`,
-    },
-    // email: 'president@friendsofmercyhurstrowing.com',
-  },
-  {
-    memberImg: pat,
-    name: 'Patrick Salvatore',
-    gradYear: `18`,
-    title: 'Board Member',
-    bio: {
-      1: `Pat graduated from Mercyhurst University in 2018 and is head of technology for FOMR. During his time at Mercyhurst, he majored and received a Bachelor’s of Science in Biochemistry from the Zurn School. During his four years he was a member of the men’s   lightweight rowing program, earning a bronze and gold medal for MU at the 2017 and 2018 Dad Vail Regatta. Since graduating from Mercyhurst, Pat now is a software developer at North Western Mutual building financial planning software for financial reps. under the North Western Mutual. Pat also works at Clinical.ly building software that provides solutions to the clinical research industry and helping research facilities focus on conducting studies as efficiently as possible.`,
     },
     // email: 'president@friendsofmercyhurstrowing.com',
   },

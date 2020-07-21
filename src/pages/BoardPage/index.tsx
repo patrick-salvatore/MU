@@ -3,10 +3,7 @@ import React from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import './board-page.scss';
 import { MEMBERS } from './members';
-import { AnchorTag } from '@components/anchorTag/anchorTag';
-import Accordian from '@components/accordion';
-import Summary from '@components/accordion/Summary';
-import Details from '@components/accordion/Details';
+import { ActivityAccordion } from './ActivityAccordion';
 
 const BoardPage: React.FC = (): JSX.Element => {
   return (
@@ -54,40 +51,8 @@ const BoardPage: React.FC = (): JSX.Element => {
           </div>
         ))}
       </div>
+      <ActivityAccordion />
 
-      <Accordian>
-        <Summary>
-          <h4 style={{ margin: 0 }}>
-            Friends of Mercyhurst Rowing Board Activity
-          </h4>
-        </Summary>
-        <Accordian>
-          <Summary>
-            <h4 style={{ margin: 0 }}>Articles of Incorporation</h4>
-          </Summary>
-          <Details>
-            <AnchorTag
-              href="/static/articles-of-incorporation.pdf"
-              newTab
-              style={{ textDecoration: 'underline' }}
-            >
-              FOMR Bylaws
-            </AnchorTag>
-          </Details>
-        </Accordian>
-        <Accordian>
-          <Summary>
-            <h4 style={{ margin: 0 }}>Board Meeting Notes</h4>
-          </Summary>
-          <Details>
-            <Accordian>
-              <Summary>
-                <h4 style={{ margin: 0 }}>2020</h4>
-              </Summary>
-            </Accordian>
-          </Details>
-        </Accordian>
-      </Accordian>
       {/* <div className="donation-button__wrapper">
         <Link to="/donate" className="donation-button">
           donate
