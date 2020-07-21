@@ -2,11 +2,9 @@ import './nav.scss';
 import React from 'react';
 import { NavLink, Link, RouteComponentProps } from 'react-router-dom';
 import { withRouter } from 'react-router';
-import { SubMenu } from './submenu';
 import LogoSVG from './svg/logo2.svg';
 
 const Navbar: React.FC<RouteComponentProps> = ({ location }): JSX.Element => {
-  const [openSubMenu, setOpenSubMenu] = React.useState<boolean>(false);
   const [sticky, setSticky] = React.useState<boolean>(false);
   const navRef = React.useRef<HTMLDivElement>(null);
 
@@ -69,33 +67,9 @@ const Navbar: React.FC<RouteComponentProps> = ({ location }): JSX.Element => {
         <NavLink className="link" activeClassName="link__active" to="/donate">
           <span className="link__text">DONATE</span>
         </NavLink>
-        <SubMenu
-          className="subMenu__wrapper"
-          activeClassName="--active"
-          isOpenSubMenu={openSubMenu}
-          onMouseLeave={(): void => setOpenSubMenu(false)}
-        >
-          <div
-            onMouseOver={(): void => setOpenSubMenu(true)}
-            className="link__text--title"
-          >
-            OUR BOARD
-          </div>
-          <div
-            id="js-subNavMenu"
-            className={
-              openSubMenu ? 'subMenu__contents openDown' : 'subMenu__contents'
-            }
-          >
-            <NavLink
-              className="subMenu__link"
-              activeClassName="subMenu__link--active"
-              to="/about"
-            >
-              <span className="link__text">ABOUT US</span>
-            </NavLink>
-          </div>
-        </SubMenu>
+        <NavLink className="link" activeClassName="link__active" to="/board">
+          <span className="link__text">OUR BOARD</span>
+        </NavLink>
         <NavLink
           className="link"
           activeClassName="link__active"

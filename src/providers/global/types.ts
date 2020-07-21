@@ -6,9 +6,13 @@ export type GlobalNotificationType = {
 };
 
 export type GlobalNotificationStateType = {
-  // display: boolean;
   messages: GlobalNotificationType[];
 };
+
+// export type SetContextState<T> = <K extends keyof T>(
+//   path: K,
+//   newValue: T[K],
+// ) => void;
 
 export interface IGlobalDataContext {
   notifications: GlobalNotificationStateType;

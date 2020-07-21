@@ -1,25 +1,13 @@
 const LANDING = '/';
-const ADMIN = '/admin';
-const ABOUT = '/about';
-const SIGN_UP = '/signup';
-const SIGN_IN = '/signin';
+const BOARD = '/board';
 const DONATE = '/donate';
-const HOME = '/home';
-const ACCOUNT = '/account';
-const PASSWORD_FORGET = '/reset-password';
 const CONTACT = '/contact';
 const NEWSLETTER = '/newsletter';
 
 export default {
-  ADMIN,
-  ABOUT,
+  BOARD,
   LANDING,
-  SIGN_UP,
-  SIGN_IN,
   DONATE,
-  HOME,
-  ACCOUNT,
-  PASSWORD_FORGET,
   CONTACT,
   NEWSLETTER,
 };

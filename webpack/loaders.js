@@ -77,6 +77,17 @@ const fontLoader = {
   },
 };
 
+const fileLoader = {
+  test: /\.(pdf)$/,
+  use: {
+    loader: 'file-loader',
+    options: {
+      limit: 10000,
+      name: 'static/[name].[ext]',
+    },
+  },
+};
+
 export const rules = [
   htmlLoader,
   tsLoader,
@@ -85,4 +96,5 @@ export const rules = [
   svgLoader,
   mediaLoader,
   fontLoader,
+  fileLoader,
 ];

@@ -7,6 +7,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { currentDirectory } from './envs';
 import WebpackBar from 'webpackbar';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 const plugins = [
   // getDotenv(env),
@@ -21,6 +22,7 @@ const plugins = [
   }),
   new webpack.ProgressPlugin(),
   new CleanWebpackPlugin(),
+  new CopyWebpackPlugin([{ from: 'public/static', to: 'static' }]),
   new HtmlWebpackPlugin({
     template: path.resolve(currentDirectory, 'public', 'index.html'),
     filename: 'index.html',

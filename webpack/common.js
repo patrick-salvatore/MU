@@ -7,7 +7,7 @@ import { jsFolder, outputPath, entryPath } from './paths';
 export const dirName = path.join(__dirname, '../');
 
 const entry = {
-  vendor: 'react',
+  // vendor: 'react',
   bundle: entryPath,
 };
 

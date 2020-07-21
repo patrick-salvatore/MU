@@ -8,7 +8,6 @@ import {
 const initialGlobalState = {
   notifications: {
     messages: [],
-    // display: false,
   },
 };
 

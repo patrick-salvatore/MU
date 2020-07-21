@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 
-import AboutPage from '@pages/AboutPage';
+import BoardPage from '@pages/BoardPage';
 import ContactPage from '@pages/ContactPage';
 import LandingPage from '@pages/LandingPage';
 import Donate from '@pages/Donate';
@@ -21,7 +21,7 @@ export const AppView: React.FC = (): JSX.Element => (
         <Switch>
           <Route exact={true} path={ROUTES.LANDING} component={LandingPage} />
           <Route exact={true} path={ROUTES.CONTACT} component={ContactPage} />
-          <Route exact={true} path={ROUTES.ABOUT} component={AboutPage} />
+          <Route exact={true} path={ROUTES.BOARD} component={BoardPage} />
           <Route exact={true} path={ROUTES.DONATE} component={Donate} />
           <Route exact={true} path={ROUTES.NEWSLETTER} component={Newsletter} />
           <Route component={NotFound} />
