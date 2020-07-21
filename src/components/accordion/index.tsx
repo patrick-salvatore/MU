@@ -4,7 +4,7 @@ import { AccordionContext } from './AccordionContext';
 import './accordion.scss';
 
 const TransitionComponent = ({ expanded, children }) => (
-  <div className={`accordion ${expanded ? 'open' : 'closed'}`}>{children}</div>
+  <div className={`accordion ${expanded ? 'open' : ''}`}>{children}</div>
 );
 
 const Accordion: React.FC = ({ children: childrenProps }) => {
