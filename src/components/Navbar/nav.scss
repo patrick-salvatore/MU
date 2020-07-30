@@ -95,7 +95,7 @@
 
       .link {
         display: grid;
-        padding-left: 25px;
+        margin-left: 25px;
         font-weight: 700;
         font-size: 18px;
         color: #ffffff;
@@ -196,7 +196,7 @@
 
     .link {
       display: grid;
-      padding-left: 25px;
+      margin-left: 25px;
       font-weight: 700;
       font-size: 20px;
       outline: none;
@@ -206,49 +206,5 @@
         font-size: 20px;
       }
     }
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    transform: translate3d(100%, 0, 0);
-    visibility: visible;
-  }
-
-  to {
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes slideOutRight {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-
-  to {
-    visibility: hidden;
-    transform: translate3d(100%, 0, 0);
-  }
-}
-
-@keyframes slideInDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-3%);
-  }
-  100% {
-    transform: translateY(0%);
-    opacity: 1;
-  }
-}
-
-@keyframes slideInUp {
-  from {
-    transform: translate3d(100%, 0, 0);
-    visibility: visible;
-  }
-
-  to {
-    transform: translate3d(0, 0, 0);
   }
 }

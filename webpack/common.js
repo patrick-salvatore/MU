@@ -3,7 +3,7 @@ import path from 'path';
 import plugins from './plugins';
 import { rules } from './loaders';
 import { jsFolder, outputPath, entryPath } from './paths';
-import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
+// import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
 
 export const dirName = path.join(__dirname, '../');
 
@@ -46,25 +46,25 @@ const optimization = {
 
 const resolve = {
   extensions: ['.js', '.jsx', '.ts', '.tsx', '.scss', '.css'],
-  plugins: [
-    new TsconfigPathsPlugin({
-      configFile: 'tsconfig.json',
-    }),
-  ],
-  // alias: {
-  //   '@hooks': path.resolve(dirName, 'src', 'hooks'),
-  //   '@components': path.resolve(dirName, 'src', 'components'),
-  //   '@api': path.resolve(dirName, 'src', 'api'),
-  //   '@store': path.resolve(dirName, 'src', 'store'),
-  //   '@providers': path.resolve(dirName, 'src', 'providers'),
-  //   '@scss': path.resolve(dirName, 'src', 'scss'),
-  //   '@pages': path.resolve(dirName, 'src', 'pages'),
-  //   '@routes': path.resolve(dirName, 'src', 'routes'),
-  //   '@styledComponents': path.resolve(dirName, 'src', 'styledComponents'),
-  //   '@utils': path.resolve(dirName, 'src', 'utils'),
-  //   '@img': path.resolve(dirName, 'public', 'img'),
-  //   '@fonts': path.resolve(dirName, 'public', 'fonts'),
-  // },
+  // plugins: [
+  //   new TsconfigPathsPlugin({
+  //     configFile: 'tsconfig.json',
+  //   }),
+  // ],
+  alias: {
+    '@hooks': path.resolve(dirName, 'src', 'hooks'),
+    '@components': path.resolve(dirName, 'src', 'components'),
+    '@api': path.resolve(dirName, 'src', 'api'),
+    '@store': path.resolve(dirName, 'src', 'store'),
+    '@providers': path.resolve(dirName, 'src', 'providers'),
+    '@scss': path.resolve(dirName, 'src', 'scss'),
+    '@pages': path.resolve(dirName, 'src', 'pages'),
+    '@routes': path.resolve(dirName, 'src', 'routes'),
+    '@styledComponents': path.resolve(dirName, 'src', 'styledComponents'),
+    '@utils': path.resolve(dirName, 'src', 'utils'),
+    '@img': path.resolve(dirName, 'public', 'img'),
+    '@fonts': path.resolve(dirName, 'public', 'fonts'),
+  },
 };
 
 export default {
