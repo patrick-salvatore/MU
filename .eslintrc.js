@@ -5,7 +5,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
     'plugin:prettier/recommended',
-    'react-hooks',
+    'plugin:react-hooks/recommended',
     'eslint:recommended',
   ],
   env: {
@@ -83,8 +83,7 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 0,
     // react
     'react/prop-types': [0],
-    // react
-    'react-hooks/rules-of-hooks': 'error',
+    // 'react-hooks/rules-of-hooks': 'error',
     // 'react-hooks/exhaustive-deps': 'warn',
   },
 };
