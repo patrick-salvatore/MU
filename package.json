@@ -132,7 +132,7 @@
   },
   "scripts": {
     "clean-dist": "rimraf dist/*",
-    "start": "nodemon server env NODE_ENV=production",
+    "start": "NODE_ENV=production nodemon server",
     "test": "jest --watchAll",
     "dev": "webpack-dev-server --progress --overlay --config webpack/dev.babel.js",
     "build:dev": "yarn run clean-dist &&  webpack --mode development --config webpack/prod.babel.js",
