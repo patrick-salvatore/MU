@@ -1,6 +1,6 @@
 import React from 'react';
 import { Register } from './_form';
-import ErrorMessage from './errorMessage';
+import ErrorMessage from './ErrorMessage';
 
 type FormInputType = {
   register: Register;

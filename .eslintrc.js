@@ -5,7 +5,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
     'plugin:prettier/recommended',
-    // 'plugin:react-hooks',
+    'react-hooks',
     'eslint:recommended',
   ],
   env: {
@@ -13,7 +13,7 @@ module.exports = {
     jasmine: true,
     jest: true,
     es6: true,
-    node: true
+    node: true,
   },
   parserOptions: {
     ecmaVersion: 10, // Allows for the parsing of modern ECMAScript features
@@ -78,13 +78,13 @@ module.exports = {
     'no-param-reassign': 'off',
 
     // typescript
-    "@typescript-eslint/no-var-requires": 0,
-    '@typescript-eslint/interface-name-prefix' : [0],
+    '@typescript-eslint/no-var-requires': 0,
+    '@typescript-eslint/interface-name-prefix': [0],
     '@typescript-eslint/explicit-function-return-type': 0,
     // react
     'react/prop-types': [0],
     // react
-    // 'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/rules-of-hooks': 'error',
     // 'react-hooks/exhaustive-deps': 'warn',
   },
 };
