@@ -1,6 +1,6 @@
 import React from 'react';
-import { Register } from './_form';
-import ErrorMessage from './ErrorMessage';
+import { Register } from '@components/form/_form';
+import ErrorMessage from '@components/FormErrorMessage';
 
 type FormInputType = {
   register: Register;
@@ -10,7 +10,7 @@ type FormInputType = {
   as?: string;
   sublabel?: string;
 };
-const FormInput: React.FC<FormInputType> = ({
+export const FormInput: React.FC<FormInputType> = ({
   register,
   name,
   className,
@@ -36,5 +36,3 @@ const FormInput: React.FC<FormInputType> = ({
     </div>
   );
 };
-
-export default FormInput;

@@ -2,7 +2,7 @@ import React from 'react';
 import Form from '@components/form/_form';
 import { LoadingButton } from '@components/LoadingButton';
 import { useSendEmail } from '@store/sendEmail';
-import FormInput from '@components/form/FormInput';
+import { FormInput } from '@components/FormInput';
 import './contact-form.scss';
 
 const ContactFormInitalValues = {
