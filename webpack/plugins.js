@@ -1,8 +1,6 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 import webpack from 'webpack';
 import path from 'path';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
-// import ExtractCssChunks from 'extract-css-chunks-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { currentDirectory } from './envs';
 import WebpackBar from 'webpackbar';
@@ -10,7 +8,6 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 const plugins = [
-  // getDotenv(env),
   new WebpackBar({
     color: '#268bd2',
     minimal: false,
@@ -32,10 +29,6 @@ const plugins = [
       removeEmptyAttributes: true,
     },
   }),
-  // new ExtractCssChunks({
-  //   filename: 'css/[name].min.css',
-  //   chunkFilename: 'css/[id].min.css',
-  // }),
 ];
 
 export default plugins;

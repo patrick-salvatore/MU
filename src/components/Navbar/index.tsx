@@ -70,6 +70,9 @@ const Navbar: React.FC<RouteComponentProps> = ({ location }): JSX.Element => {
         <NavLink className="link" activeClassName="link__active" to="/board">
           <span className="link__text">OUR BOARD</span>
         </NavLink>
+        <NavLink className="link" activeClassName="link__active" to="/team">
+          <span className="link__text">THE TEAM</span>
+        </NavLink>
         <NavLink
           className="link"
           activeClassName="link__active"

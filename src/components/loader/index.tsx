@@ -5,13 +5,14 @@ const Loader: React.FC<LoaderProps> = ({
   width,
   height,
   label,
+  color = '#424242',
 }): JSX.Element => (
   <svg
     width={width}
     height={height}
     viewBox="0 0 38 38"
     xmlns="http://www.w3.org/2000/svg"
-    stroke="#424242"
+    stroke={color}
     aria-label={label}
   >
     <g fill="none" fillRule="evenodd">

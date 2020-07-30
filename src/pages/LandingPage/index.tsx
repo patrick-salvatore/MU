@@ -35,6 +35,22 @@ const LandingPage: React.FC<ILandingPageProps> = (): JSX.Element => {
           </section>
         </ColumnContainer>
       </FullPageContainer>
+      <section className="lp__bottom__wrapper">
+        <div className="donation__wrapper">
+          <h1 className="donation-title">laker pride</h1>
+          <p className="donation-text">
+            FOMR provides the necessary support and guidance to allow our
+            ambitious, Mercyhurst Rowing Team — comprised of hard working
+            student athletes of the Meryhurst University Rowing team — to push
+            competitive and athletic boundaries, seeking new ways to race and
+            win.
+          </p>
+          <Link to="/donate" className="donation-button">
+            donate to the team
+          </Link>
+        </div>
+      </section>
+      <LazyLoadImage className="banner_img" src={oars} />
       <FullPageContainer>
         <ColumnContainer>
           <section className="lp__middle__wrapper">
@@ -69,22 +85,6 @@ const LandingPage: React.FC<ILandingPageProps> = (): JSX.Element => {
           </section>
         </ColumnContainer>
       </FullPageContainer>
-      <section className="lp__bottom__wrapper">
-        <LazyLoadImage className="bottom_img1" src={oars} />
-        <div className="donation__wrapper">
-          <h1 className="donation-title">laker pride</h1>
-          <p className="donation-text">
-            FOMR provides the necessary support and guidance to allow our
-            ambitious, Mercyhurst Rowing Team — comprised of hard working
-            student athletes of the Meryhurst University Rowing team — to push
-            competitive and athletic boundaries, seeking new ways to race and
-            win.
-          </p>
-          <Link to="/donate" className="donation-button">
-            donate to the team
-          </Link>
-        </div>
-      </section>
       <InstagramFeed />
     </div>
   );

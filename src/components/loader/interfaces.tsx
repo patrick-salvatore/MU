@@ -1,5 +1,6 @@
 export interface LoaderProps {
-  height: number;
-  width: number;
-  label: string;
+  height: number | string;
+  width: number | string;
+  label?: string;
+  color?: string;
 }

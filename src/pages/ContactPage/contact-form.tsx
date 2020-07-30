@@ -1,9 +1,9 @@
 import React from 'react';
-import { sendEmailApi } from '@api/send-email';
-import Form, { Register, Error } from '@components/form/_form';
-import Alert from '@components/form/alert.svg';
+import Form from '@components/form/_form';
+import { LoadingButton } from '@components/LoadingButton';
+import { useSendEmail } from '@store/sendEmail';
+import FormInput from '@components/form/FormInput';
 import './contact-form.scss';
-import { useGlobalContext } from '@providers/global/index';
 
 const ContactFormInitalValues = {
   firstName: '',
@@ -13,50 +13,8 @@ const ContactFormInitalValues = {
   message: '',
 };
 
-const ErrorMessage = ({ error }: { error: string }): JSX.Element => (
-  <div className="error-wrapper">
-    <Alert />
-    <p>{error}</p>
-  </div>
-);
-
-type FormInputType = {
-  register: Register;
-  name: string;
-  className?: string;
-  error?: Error;
-  as?: string;
-  sublabel?: string;
-};
-const FormInput: React.FC<FormInputType> = ({
-  register,
-  name,
-  className,
-  error,
-  as,
-  sublabel,
-}) => {
-  const props = { ref: register, name, className, autoComplete: 'off' };
-  return (
-    <div className="form-input-wrapper">
-      {as ? (
-        React.createElement(as as string, props)
-      ) : (
-        <input
-          className={className}
-          name={name}
-          ref={register}
-          autoComplete="off"
-        />
-      )}
-      <span className="input-sublabel">{sublabel}</span>
-      {error && <ErrorMessage error={error.message} />}
-    </div>
-  );
-};
-
 const ContactForm = (): JSX.Element => {
-  const { setGlobalNotification } = useGlobalContext();
+  const { loading, sendEmail } = useSendEmail();
 
   const onSubmit = async (
     values: typeof ContactFormInitalValues,
@@ -72,28 +30,9 @@ const ContactForm = (): JSX.Element => {
       }
     );
 
-    try {
-      const res = await sendEmailApi(payload);
-      if (res.data) {
-        event.target.reset();
-        setGlobalNotification &&
-          setGlobalNotification({
-            messages: [{ message: res.data, type: 'success' }],
-          });
-      }
-    } catch (e) {
-      event.target.reset();
-      setGlobalNotification &&
-        setGlobalNotification({
-          messages: [
-            {
-              message:
-                'Oops, something went wrong! Please contact us directly at info@friendsofmercyhurstrowing.com',
-              type: 'error',
-            },
-          ],
-        });
-    }
+    const clearForm = () => event.target.reset();
+
+    sendEmail(payload, clearForm);
   };
 
   return (
@@ -199,9 +138,12 @@ const ContactForm = (): JSX.Element => {
                 />
               </div>
             </div>
-            <button type="submit" className="contact-form--button">
-              SUBMIT
-            </button>
+            <LoadingButton
+              isLoading={loading}
+              type="submit"
+              className="contact-form--button"
+              text="SUBMIT"
+            />
           </form>
         )}
       />

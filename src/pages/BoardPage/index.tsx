@@ -51,8 +51,9 @@ const BoardPage: React.FC = (): JSX.Element => {
           </div>
         ))}
       </div>
-      <ActivityAccordion />
-
+      <div style={{ margin: '25px 0' }}>
+        <ActivityAccordion />
+      </div>
       {/* <div className="donation-button__wrapper">
         <Link to="/donate" className="donation-button">
           donate

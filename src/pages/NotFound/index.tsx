@@ -1,10 +1,11 @@
 import React from 'react';
+import { FullPageContainer } from '@styledComponents/containers';
 
 const NotFound = (): JSX.Element => {
   return (
-    <div>
+    <FullPageContainer>
       <h1>OOPS</h1>
-    </div>
+    </FullPageContainer>
   );
 };
 

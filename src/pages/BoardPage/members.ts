@@ -6,6 +6,7 @@ import milos from '@img/members/milos.png';
 import steph from '@img/members/steph.png';
 import adrian from '@img/members/adrian.png';
 import pat from '@img/members/pat.png';
+import allan from '@img/members/allan.png';
 
 export const MEMBERS = [
   {
@@ -89,6 +90,17 @@ export const MEMBERS = [
     bio: {
       1: `Adrian’s association with Mercyhurst started as a student in 1986. After graduate school, Adrian returned to Mercyhurst in 1991 when he started coaching and working in the sports medicine department as an athletic trainer. In 1995 the varsity women’s four won a National Championship and in 1998 he took over the helm of the program. Success came shortly thereafter with the women’s lightweight eight winning three national championships and a 4th place finish at the Division I IRA regatta. The newly created Women’s NCAA rowing championship opened the door for the women’s program to go to a new level that culminated in the school’s first-ever NCAA championship in 2004. The women have since won another NCAA title in 2010 and finished runners-up four times. In 2002 Adrian took over direct control of the Men’s team and started to build a Lightweight program, unlike anything the school had in the past. The first Dad Vail championship in over 20 years in the lightweight four started in 2008 in what was to become a program where winning became the norm. Since 2008 the men have won 15 Dad Vail Championships include a sweep in 2018 where the 5 men’s boats entered all won gold medals. Other program highlights include finalist at the Henley Royal Regatta in 2009; 7thplace IRA in the Lightweight eight and a 6th place in the Lwt four. Four Graduates of the program have competed at the World Championships, with two of them winning medals.`,
       2: `  Outside of Mercyhurst Adrian has coached both USA national teams’ crews at the University World Championships in 2018 and the Russian Women’s Olympic team in 2015 and 2016. At the 2016 European Championships, his women’s eight won the bronze medal. He is also a certified coaching instructor for USRowing and has conducted clinics across the country.`,
+    },
+    // email: 'president@friendsofmercyhurstrowing.com',
+  },
+  {
+    memberImg: allan,
+    name: 'Allan Belovarac',
+    gradYear: `73`,
+    title: 'Board Member',
+    bio: {
+      1: `Having grown up on Erie’s Bayfront as a “bay rat,” Allan was always on or near the waters of Presque Isle Bay and Lake Erie.  When he transferred to Mercyhurst College in 1971, he was thrilled to learn of the establishment of a rowing program at Mercyhurst.  The program was in its infancy – no dock, no boathouse, only one dilapidated shell donated by the Buffalo Rowing Club, but the excitement of building something from scratch was hard to resist.  “Al” rowed in the Novice 8 and shares the distinction with his crew mates of having been in the first boat to win a race for Mercyhurst.  In his senior year, he was co-captain and stroked the Varsity 8.  Upon graduation, he stuck with the program and coached the novice crews for several years, and helped in the establishment of a women’s rowing program in 1976.  He finally took over the program in 1981 and served through 1986, when he became a full-time faculty member of the History Department. “Coach Al”  took great pride in sustaining the program during his early tenure when there were no scholarships, with nearly all competitors recruited from the student body as novice rowers.  Two of his greatest thrills was in 1982 when his men’s Lightweight 8 defeated Marietta College for the first time ever, and in 1984 when the men and women’s teams won the overall trophy at the President’s Cup Regatta in Poughkeepsie, NY.  He was also the prime mover behind the construction of indoor rowing tanks and the exercise room the crews use to this day. As more sports were added at Mercyhurst and the pool of  prospective  oars people  grew smaller, Allan persuaded the College Administration to make scholarships available to recruit experienced oarsmen and women to serve as a foundation around which to build increasingly competitive crews. Those labors planted the seed that  blossomed into the renowned program Mercyhust has today under Adrian Spracklen.`,
+      2: `Allan’s career at Mercyhurst continued as he became Chair of the History Department and once again took pride in building a strong program, this time in the field of academics.  He also served as an officer in the U.S. Naval Reserve, where he undertook numerous mobilizations in both the Pacific and Atlantic theaters.  He retired from the Navy as a Commander in 2012, and as full Professor from Mercyhurst in 2014.  His attachment to the waters of the Great Lakes continues, as he currently serves as a volunteer crewmember on the U.S. Brig Niagara and competes in singlehanded sailing endurance races over all five Great Lakes.  During the winter, he’s still on the water, but as it takes the form of snow, serving on the National Ski Patrol at Peak n’ Peak Resort in nearby Clymer, NY.`,
     },
     // email: 'president@friendsofmercyhurstrowing.com',
   },
