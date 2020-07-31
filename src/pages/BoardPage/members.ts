@@ -1,12 +1,12 @@
-import jonas from '@img/members/jonas.png';
-import wnek from '@img/members/wnek.png';
-import grant from '@img/members/grant.png';
-import bernie from '@img/members/bernie.png';
-import milos from '@img/members/milos.png';
+import jonas from '@img/members/jonas2.png';
+import wnek from '@img/members/wnek2.png';
+import grant from '@img/members/grant2.png';
+import bernie from '@img/members/bernie2.png';
+import milos from '@img/members/milos2.png';
 import steph from '@img/members/steph.png';
 import adrian from '@img/members/adrian.png';
 import pat from '@img/members/pat.png';
-import allan from '@img/members/allan.png';
+import allan from '@img/members/allan2.png';
 
 export const MEMBERS = [
   {
@@ -68,7 +68,7 @@ export const MEMBERS = [
     gradYear: `18`,
     title: 'IT/Web',
     bio: {
-      1: `Pat graduated from Mercyhurst University in 2018 and is head of technology for FOMR. During his time at Mercyhurst, he majored and received a Bachelor’s of Science in Biochemistry from the Zurn School. During his four years he was a member of the men’s   lightweight rowing program, earning a bronze and gold medal for MU at the 2017 and 2018 Dad Vail Regatta. Since graduating from Mercyhurst, Pat now is a software developer at North Western Mutual building financial planning software for financial reps. under the North Western Mutual. Pat also works at Clinical.ly building software that provides solutions to the clinical research industry and helping research facilities focus on conducting studies as efficiently as possible.`,
+      1: `Pat graduated from Mercyhurst University in 2018 and is head of technology for FOMR. During his time at Mercyhurst, he majored and received a Bachelor’s of Science in Biochemistry from the Zurn College of Natural and Health Sciences. During his four years at Mercyhurst he was a member of the men’s lightweight rowing program, earning bronze and gold medal for MU at the 2017 and 2018 Dad Vail Regatta. Since graduating from Mercyhurst, Pat now is a software developer at NorthWestern Mutual building financial planning software. Pat also works at Clinical.ly building software that provides solutions to the clinical research industry and helping research facilities focus on conducting studies as efficiently as possible.`,
     },
     // email: 'president@friendsofmercyhurstrowing.com',
   },
@@ -89,7 +89,7 @@ export const MEMBERS = [
     title: 'Board Member',
     bio: {
       1: `Adrian’s association with Mercyhurst started as a student in 1986. After graduate school, Adrian returned to Mercyhurst in 1991 when he started coaching and working in the sports medicine department as an athletic trainer. In 1995 the varsity women’s four won a National Championship and in 1998 he took over the helm of the program. Success came shortly thereafter with the women’s lightweight eight winning three national championships and a 4th place finish at the Division I IRA regatta. The newly created Women’s NCAA rowing championship opened the door for the women’s program to go to a new level that culminated in the school’s first-ever NCAA championship in 2004. The women have since won another NCAA title in 2010 and finished runners-up four times. In 2002 Adrian took over direct control of the Men’s team and started to build a Lightweight program, unlike anything the school had in the past. The first Dad Vail championship in over 20 years in the lightweight four started in 2008 in what was to become a program where winning became the norm. Since 2008 the men have won 15 Dad Vail Championships include a sweep in 2018 where the 5 men’s boats entered all won gold medals. Other program highlights include finalist at the Henley Royal Regatta in 2009; 7thplace IRA in the Lightweight eight and a 6th place in the Lwt four. Four Graduates of the program have competed at the World Championships, with two of them winning medals.`,
-      2: `  Outside of Mercyhurst Adrian has coached both USA national teams’ crews at the University World Championships in 2018 and the Russian Women’s Olympic team in 2015 and 2016. At the 2016 European Championships, his women’s eight won the bronze medal. He is also a certified coaching instructor for USRowing and has conducted clinics across the country.`,
+      2: `Outside of Mercyhurst Adrian has coached both USA national teams’ crews at the University World Championships in 2018 and the Russian Women’s Olympic team in 2015 and 2016. At the 2016 European Championships, his women’s eight won the bronze medal. He is also a certified coaching instructor for USRowing and has conducted clinics across the country.`,
     },
     // email: 'president@friendsofmercyhurstrowing.com',
   },

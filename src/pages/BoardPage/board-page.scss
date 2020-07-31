@@ -39,12 +39,12 @@
         justify-content: center;
 
         .member-image__wrapper {
-          width: 88%;
           display: flex;
           flex-direction: column;
+          width: 100%;
+          margin: 0 14px;
 
           .member-image {
-            width: 100%;
             height: 350px;
           }
         }
@@ -58,7 +58,7 @@
         }
 
         .member-bio {
-          padding-top: 8px;
+          padding-top: 16px;
         }
       }
     }
