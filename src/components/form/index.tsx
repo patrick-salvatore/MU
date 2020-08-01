@@ -1,11 +1,6 @@
 import { useState, memo } from 'react';
-import { FormProps } from './interfaces';
 
-const Form: React.FC<FormProps<any>> = ({
-  formFields,
-  render,
-  customHandleSubmit,
-}) => {
+const Form = ({ formFields, render }) => {
   const [fields, setFields] = useState(formFields);
 
   const handleChange = (e: React.ChangeEvent): void => {
@@ -22,12 +17,6 @@ const Form: React.FC<FormProps<any>> = ({
 
   const handleSubmit = (e: React.MouseEvent): void => {
     e.preventDefault();
-
-    if (customHandleSubmit) {
-      customHandleSubmit(fields);
-      return;
-    }
-
     alert(`
         -- SUBMITTING FORM --
         ${JSON.stringify(fields, null, 2)}

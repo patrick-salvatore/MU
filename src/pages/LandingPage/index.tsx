@@ -6,6 +6,8 @@ import {
   ColumnContainer,
   FullPageContainer,
 } from '@styledComponents/containers';
+
+import LandingModal from '@components/FirstLandingModal';
 import { InstagramFeed } from '@components/InstagramFeed';
 
 import lpBgImg from '@img/landing-page.png';
@@ -13,11 +15,7 @@ import oars from '@img/oars2.png';
 import whoWeAreImg1 from '@img/whoWeAreImg1.jpg';
 import whoWeAreImg2 from '@img/received_10204283795090061.png';
 
-interface ILandingPageProps {
-  scrollPosition: any;
-}
-
-const LandingPage: React.FC<ILandingPageProps> = (): JSX.Element => {
+const LandingPage: React.FC = (): JSX.Element => {
   return (
     <div className="lp__wrapper">
       <FullPageContainer>
@@ -90,4 +88,11 @@ const LandingPage: React.FC<ILandingPageProps> = (): JSX.Element => {
   );
 };
 
-export default LandingPage;
+const LandingPageContainer = () => (
+  <>
+    <LandingModal />
+    <LandingPage />
+  </>
+);
+
+export default LandingPageContainer;

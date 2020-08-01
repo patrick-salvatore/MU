@@ -76,13 +76,6 @@ p {
   line-height: 1.8em;
 }
 
-i {
+i, svg, button {
   cursor: pointer;
-}
-
-.no-scroll {
-  html,
-  body {
-    overflow: hidden;
-  }
 }

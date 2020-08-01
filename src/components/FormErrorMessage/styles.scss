@@ -1,0 +1,15 @@
+.error-wrapper {
+  display: flex;
+  align-items: center;
+  color: #cc3b3b;
+
+
+  p {
+    font-size: 13px;
+  }
+
+  svg {
+    height: 13px;
+    margin-right: 5px;
+  }
+}

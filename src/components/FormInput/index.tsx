@@ -1,11 +1,13 @@
 import React from 'react';
 import { Register } from '@components/form/_form';
 import ErrorMessage from '@components/FormErrorMessage';
+import './styles.scss';
 
 type FormInputType = {
   register: Register;
   name: string;
-  className?: string;
+  inputClassName?: string;
+  rootClassName?: string;
   error?: Error;
   as?: string;
   sublabel?: string;
@@ -13,26 +15,40 @@ type FormInputType = {
 export const FormInput: React.FC<FormInputType> = ({
   register,
   name,
-  className,
+  inputClassName,
+  rootClassName,
   error,
   as,
   sublabel,
 }) => {
-  const props = { ref: register, name, className, autoComplete: 'off' };
+  const props = {
+    ref: register,
+    name,
+    className: inputClassName,
+    autoComplete: 'off',
+  };
   return (
-    <div className="form-input-wrapper">
-      {as ? (
-        React.createElement(as as string, props)
-      ) : (
-        <input
-          className={className}
-          name={name}
-          ref={register}
-          autoComplete="off"
-        />
-      )}
-      <span className="input-sublabel">{sublabel}</span>
-      {error && <ErrorMessage error={error.message} />}
-    </div>
+    <>
+      <div
+        className={
+          rootClassName
+            ? `${rootClassName} form-input-wrapper`
+            : 'form-input-wrapper'
+        }
+      >
+        {as ? (
+          React.createElement(as as string, props)
+        ) : (
+          <input
+            className={inputClassName}
+            name={name}
+            ref={register}
+            autoComplete="off"
+          />
+        )}
+        {sublabel && <span className="input-sublabel">{sublabel}</span>}
+        {error && <ErrorMessage error={error.message} />}
+      </div>
+    </>
   );
 };

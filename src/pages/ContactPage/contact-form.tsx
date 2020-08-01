@@ -1,5 +1,5 @@
 import React from 'react';
-import Form from '@components/form/_form';
+import Form, { registerEmail } from '@components/form/_form';
 import { LoadingButton } from '@components/LoadingButton';
 import { useSendEmail } from '@store/sendEmail';
 import { FormInput } from '@components/FormInput';
@@ -85,16 +85,7 @@ const ContactForm = (): JSX.Element => {
               </label>
               <div id="input--email" className="form-input-container--email">
                 <FormInput
-                  register={register({
-                    required: {
-                      value: true,
-                      message: 'Please enter your email',
-                    },
-                    pattern: {
-                      value: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
-                      message: 'Please enter a proper email',
-                    },
-                  })}
+                  register={registerEmail(register)}
                   name="emailAddress"
                   error={errors.emailAddress}
                 />

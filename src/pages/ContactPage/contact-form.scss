@@ -99,26 +99,6 @@
       }
     }
 
-    .form-input-wrapper {
-      display: flex;
-      flex-direction: column;
-
-      .error-wrapper {
-        display: flex;
-        align-items: center;
-
-        p {
-          font-size: 13px;
-          color: #cc3b3b;
-        }
-
-        svg {
-          height: 13px;
-          margin-right: 5px;
-        }
-      }
-    }
-
     &--button {
       cursor: pointer;
       position: absolute;

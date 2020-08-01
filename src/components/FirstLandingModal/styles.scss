@@ -1,0 +1,98 @@
+.landing-modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .email-signup {
+    &--wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 3px;
+      width: 325px;
+      background: #3b64a3;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      font-size: 13px;
+      margin: 7px 0; 
+
+      h2 {
+        color: #fff;
+      }
+
+      .email-signup--header2 {
+        font-size: 10px;
+        color: #fff;
+        margin: 0.8rem 0;
+        width: 234px;
+      }
+
+      .email-signup {
+        &--form {
+          display: flex;
+          align-items: end;
+          flex-direction: column;
+        }
+        &--form-contents {
+          display: flex;
+          background: #3ba358;
+
+          .form-input-wrapper {
+            input {
+              border: none;
+              padding: 4px;
+            }
+          }
+
+          button {
+            background: transparent;
+            border: none;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+
+  .landing-modal-img {
+    width: 356px;
+  }
+
+  .donate {
+    &--wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 3px;
+      width: 325px;
+      background: #3ba358;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      font-size: 13px;
+      margin: 7px 0; 
+
+      p { 
+        margin: 8px 0;
+      }
+
+      .donation-button {
+        height: 42px;
+        width: auto;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: #fff;
+        background-color: #0071bc;
+        border-color: #0071bc;
+        padding: 4px 25px;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}
