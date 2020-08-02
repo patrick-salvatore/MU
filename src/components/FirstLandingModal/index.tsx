@@ -53,12 +53,11 @@ const SubcribeBox = () => {
 const DonateBox = () => {
   return (
     <div className="donate--wrapper">
-      <p>
-        Allow our team and student athlete to continuing preforming at the
-        highest level
-      </p>
+      <h2>
+        Interested in making a donation to support Mercyhurst University Rowing?
+      </h2>
       <Link to="/donate" className="donation-button">
-        Go Donate Now!
+        YES!
       </Link>
     </div>
   );
@@ -68,11 +67,11 @@ const LandingModal = () => {
   const [showModal, setShowModal] = React.useState(false);
 
   React.useEffect(() => {
-    const visited = localStorage['alreadyVisited'];
+    const visited = sessionStorage['alreadyVisited'];
     if (visited) {
       setShowModal(false);
     } else {
-      localStorage['alreadyVisited'] = true;
+      sessionStorage['alreadyVisited'] = true;
       setTimeout(() => setShowModal(true), 8000);
     }
 
