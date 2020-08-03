@@ -1,8 +1,12 @@
 import React from 'react';
-import Form, { registerEmail } from '@components/form/_form';
+import Form, {
+  registerEmail,
+  registerRequiredWithMessage,
+} from '@components/form/_form';
 import { LoadingButton } from '@components/LoadingButton';
 import { useSendEmail } from '@store/sendEmail';
-import { FormInput } from '@components/FormInput';
+import { FormInput } from '@components/Inputs/FormInput';
+import { FormSection } from '@components/FormSection';
 import './contact-form.scss';
 
 const ContactFormInitalValues = {
@@ -31,7 +35,6 @@ const ContactForm = (): JSX.Element => {
     );
 
     const clearForm = () => event.target.reset();
-
     sendEmail(payload, clearForm);
   };
 
@@ -44,91 +47,47 @@ const ContactForm = (): JSX.Element => {
         formFields={ContactFormInitalValues}
         render={({ register, handleSubmit, errors }): JSX.Element => (
           <form onSubmit={handleSubmit(onSubmit)} className="contact-form">
-            <div className="form-input-container">
-              <label
-                htmlFor="input--name"
-                className="form-input-container--label"
-              >
-                Your Name<span>*</span>
-              </label>
-              <div id="input--name" className="form-input-container--name">
-                <FormInput
-                  register={register({
-                    required: {
-                      value: true,
-                      message: 'Please enter your first name',
-                    },
-                  })}
-                  name="firstName"
-                  error={errors.firstName}
-                  sublabel="First Name"
-                />
-                <FormInput
-                  register={register({
-                    required: {
-                      value: true,
-                      message: 'Please enter your last name',
-                    },
-                  })}
-                  name="lastName"
-                  error={errors.lastName}
-                  sublabel="Last Name"
-                />
-              </div>
-            </div>
-            <div className="form-input-container">
-              <label
-                htmlFor="input--email"
-                className="form-input-container--label"
-              >
-                Your Email Address<span>*</span>
-              </label>
-              <div id="input--email" className="form-input-container--email">
-                <FormInput
-                  register={registerEmail(register)}
-                  name="emailAddress"
-                  error={errors.emailAddress}
-                />
-              </div>
-            </div>
-            <div className="form-input-container">
-              <label
-                htmlFor="input--subject"
-                className="form-input-container--label"
-              >
-                Subject
-              </label>
-              <div
-                id="input--subject"
-                className="form-input-container--subject"
-              >
-                <FormInput register={register} name="subject" />
-              </div>
-            </div>
-            <div className="form-input-container">
-              <label
-                htmlFor="input--message"
-                className="form-input-container--label"
-              >
-                Message<span>*</span>
-              </label>
-              <div
-                id="input--message"
-                className="form-input-container--message"
-              >
-                <FormInput
-                  as="textarea"
-                  register={register({
-                    required: {
-                      value: true,
-                      message: 'Please enter a message to your email',
-                    },
-                  })}
-                  name="message"
-                  error={errors.message}
-                />
-              </div>
-            </div>
+            <FormSection title="You Name" name="name" required>
+              <FormInput
+                register={registerRequiredWithMessage(
+                  register,
+                  'Please enter your first name'
+                )}
+                name="firstName"
+                error={errors.firstName}
+                sublabel="First Name"
+              />
+              <FormInput
+                register={registerRequiredWithMessage(
+                  register,
+                  'Please enter your last name'
+                )}
+                name="lastName"
+                error={errors.lastName}
+                sublabel="Last Name"
+              />
+            </FormSection>
+            <FormSection title="Your Email Address" name="email" required>
+              <FormInput
+                register={registerEmail(register)}
+                name="emailAddress"
+                error={errors.emailAddress}
+              />
+            </FormSection>
+            <FormSection title="Subject" name="subject">
+              <FormInput register={register} name="subject" />
+            </FormSection>
+            <FormSection title="Message" name="message" required>
+              <FormInput
+                as="textarea"
+                register={registerRequiredWithMessage(
+                  register,
+                  'Please enter a message to your email'
+                )}
+                name="message"
+                error={errors.message}
+              />
+            </FormSection>
             <LoadingButton
               isLoading={loading}
               type="submit"

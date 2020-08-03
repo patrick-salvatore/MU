@@ -4,12 +4,23 @@ import { useForm } from 'react-hook-form';
 export type Register = ReturnType<typeof useForm>['register'];
 export type Error = ReturnType<typeof useForm>['errors'];
 export type HandleSubmit = ReturnType<typeof useForm>['handleSubmit'];
+export type SetValue = ReturnType<typeof useForm>['setValue'];
+export type Control = ReturnType<typeof useForm>['control'];
 
 export interface FormProps {
   formFields: Record<string, string | number>;
-  render: ({ register, handleSubmit, errors }) => any;
+  render: ({ register, handleSubmit, errors, setValue, control }) => any;
   className?: string;
+  registry?: string[];
 }
+
+export type ContactFormFieldValues = {
+  firstName: string;
+  lastName: string;
+  subject: string;
+  emailAddress: string;
+  message: string;
+};
 
 export const registerEmail = reg =>
   reg({
@@ -23,10 +34,21 @@ export const registerEmail = reg =>
     },
   });
 
-const Form = ({ render, formFields }: FormProps) => {
-  const { register, errors, handleSubmit } = useForm(formFields);
+export const registerRequiredWithMessage = (reg, msg: string) =>
+  reg({
+    required: {
+      value: true,
+      message: msg,
+    },
+  });
 
-  return render({ register, handleSubmit, errors });
+const Form = ({ render, formFields }: FormProps) => {
+  const { register, errors, handleSubmit, setValue, control } = useForm({
+    defaultValues: formFields,
+  });
+
+  console.log(errors);
+  return render({ register, handleSubmit, errors, setValue, control });
 };
 
 export default memo(Form);

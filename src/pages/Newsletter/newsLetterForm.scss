@@ -1,0 +1,115 @@
+.form-section {
+  &--container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    margin: 20px 0;
+    font-family: 'Manrope-Regular';
+  }
+
+  &--label {
+    font-size: 16px;
+  }
+
+  &--name {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    .form-input-wrapper {
+      width: 100%;
+      margin-right: 4px;
+
+      input {
+        padding: 12px;
+        border: 1px solid #ccc;
+        background: #fafafa;
+      }
+
+      .input-sublabel {
+        color: #00274c;
+        margin-top: 5px;
+        font-size: 12px;
+      }
+
+      &:last-of-type {
+        margin-right: 0;
+        margin-left: 4px;
+      }
+    }
+  }
+
+  &--email {
+    .form-input-wrapper {
+      width: 100%;
+
+      input {
+        padding: 12px;
+        border: 1px solid #ccc;
+        background: #fafafa;
+      }
+    }
+  }
+
+  &--address {
+    .form-input-wrapper {
+      width: 100%;
+
+      input {
+        padding: 12px;
+        border: 1px solid #ccc;
+        background: #fafafa;
+      }
+    }
+  }
+
+  &--phone-number {
+    .form-input-wrapper {
+      width: 100%;
+
+      input {
+        padding: 12px;
+        border: 1px solid #ccc;
+        background: #fafafa;
+      }
+    }
+  }
+
+  &--team-affiliation {
+    .form-input-wrapper {
+      width: 100%;
+
+      input {
+        padding: 12px;
+        border: 1px solid #ccc;
+        background: #fafafa;
+      }
+    }
+  }
+
+  &--class-year {
+    .form-input-wrapper {
+      width: 100%;
+
+      input {
+        padding: 12px;
+        border: 1px solid #ccc;
+        background: #fafafa;
+      }
+    }
+  }
+  
+  &--team-member {
+    .form-input-wrapper {
+      width: 100%;
+
+      input {
+        padding: 12px;
+        border: 1px solid #ccc;
+        background: #fafafa;
+      }
+    }
+  }
+}

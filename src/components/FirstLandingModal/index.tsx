@@ -1,14 +1,14 @@
 import React from 'react';
 import Modal from '@components/modal';
-import Form, { registerEmail } from '@components/form/_form';
 import { Link } from 'react-router-dom';
 
-import OARS from '@img/modal-oars.png';
-
-import './styles.scss';
-import { FormInput } from '@components/FormInput';
+import Form, { registerEmail } from '@components/form/_form';
+import { FormInput } from '@components/Inputs/FormInput';
 import { LoadingButton } from '@components/LoadingButton';
 import ErrorMessage from '@components/FormErrorMessage';
+
+import OARS from '@img/modal-oars.png';
+import './styles.scss';
 
 const subscribeFromFields = {
   email: '',

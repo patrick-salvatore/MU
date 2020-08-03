@@ -15,14 +15,16 @@
     align-items: center;
     padding: 0 60px;
 
-    .form-input-container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-content: center;
-      width: 100%;
-      margin: 20px 0;
-      font-family: 'Manrope-Regular';
+    .form-section {
+      &--container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        width: 100%;
+        margin: 20px 0;
+        font-family: 'Manrope-Regular';
+      }
 
       &--label {
         font-size: 16px;
