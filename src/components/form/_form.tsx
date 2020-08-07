@@ -9,9 +9,15 @@ export type Control = ReturnType<typeof useForm>['control'];
 
 export interface FormProps {
   formFields: Record<string, string | number>;
-  render: ({ register, handleSubmit, errors, setValue, control }) => any;
+  render: ({
+    register,
+    handleSubmit,
+    errors,
+    setValue,
+    setError,
+    clearError,
+  }) => any;
   className?: string;
-  registry?: string[];
 }
 
 export type ContactFormFieldValues = {
@@ -43,12 +49,25 @@ export const registerRequiredWithMessage = (reg, msg: string) =>
   });
 
 const Form = ({ render, formFields }: FormProps) => {
-  const { register, errors, handleSubmit, setValue, control } = useForm({
+  const {
+    register,
+    errors,
+    handleSubmit,
+    setValue,
+    setError,
+    clearError,
+  } = useForm({
     defaultValues: formFields,
   });
 
-  console.log(errors);
-  return render({ register, handleSubmit, errors, setValue, control });
+  return render({
+    register,
+    handleSubmit,
+    errors,
+    setValue,
+    setError,
+    clearError,
+  });
 };
 
 export default memo(Form);

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Register } from '@components/form/_form';
+import { Register, Error } from '@components/form/_form';
 import ErrorMessage from '@components/FormErrorMessage';
 import './styles.scss';
 

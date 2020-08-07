@@ -28,7 +28,7 @@ export const DropDown = ({
     register({
       name,
     });
-  }, [register]);
+  }, [register, name]);
 
   const selectOption = ({ value }) => {
     setValue(name, value);
