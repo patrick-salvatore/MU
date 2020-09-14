@@ -2,66 +2,32 @@ import React from 'react';
 import Modal from '@components/modal';
 import { Link } from 'react-router-dom';
 
-import Form, { registerEmail } from '@components/form/_form';
-import { FormInput } from '@components/Inputs/FormInput';
-import { LoadingButton } from '@components/LoadingButton';
-import ErrorMessage from '@components/FormErrorMessage';
-
 import OARS from '@img/modal-oars.png';
 import './styles.scss';
 
-const subscribeFromFields = {
-  email: '',
-};
-const SubcribeBox = () => {
-  const onSubmit = values => {
-    console.log(values);
-  };
+const SubcribeBox = () => (
+  <div className="email-signup--wrapper">
+    <h2 className="email-signup--header1">Subscribe to our email list!</h2>
+    <p className="email-signup--header2">
+      Stay up to date with monthly newsletters and alerts. Enter your email to
+      subscribe!
+    </p>
+    <Link to="/newsletter" className="subscribe-button">
+      SUBSCRIBE!
+    </Link>
+  </div>
+);
 
-  return (
-    <div className="email-signup--wrapper">
-      <h2 className="email-signup--header1">Subscribe to our email list!</h2>
-      <p className="email-signup--header2">
-        Stay up to date with monthly newsletters and alerts. Enter your email to
-        subscribe!
-      </p>
-      <Form
-        formFields={subscribeFromFields}
-        render={({ register, handleSubmit, errors }) => (
-          <form
-            onSubmit={handleSubmit(onSubmit)}
-            className="email-signup--form"
-          >
-            <div className="email-signup--form-contents">
-              <FormInput register={registerEmail(register)} name="email" />
-              <LoadingButton
-                isLoading={false}
-                type="submit"
-                text="Subscribe!"
-              />
-            </div>
-            {errors.email ? (
-              <ErrorMessage error={errors.email.message} />
-            ) : null}
-          </form>
-        )}
-      />
-    </div>
-  );
-};
-
-const DonateBox = () => {
-  return (
-    <div className="donate--wrapper">
-      <h2>
-        Interested in making a donation to support Mercyhurst University Rowing?
-      </h2>
-      <Link to="/donate" className="donation-button">
-        YES!
-      </Link>
-    </div>
-  );
-};
+const DonateBox = () => (
+  <div className="donate--wrapper">
+    <h2>
+      Interested in making a donation to support Mercyhurst University Rowing?
+    </h2>
+    <Link to="/donate" className="donation-button">
+      YES!
+    </Link>
+  </div>
+);
 
 const LandingModal = () => {
   const [showModal, setShowModal] = React.useState(false);

@@ -9,7 +9,7 @@ type FormInputType = {
   inputClassName?: string;
   rootClassName?: string;
   error?: Error;
-  as?: string;
+  as?: string | JSX.Element;
   sublabel?: string;
 };
 export const FormInput: React.FC<FormInputType> = ({
@@ -36,7 +36,9 @@ export const FormInput: React.FC<FormInputType> = ({
             : 'form-input-wrapper'
         }
       >
-        {as ? (
+        {typeof as === 'object' ? (
+          as
+        ) : as ? (
           React.createElement(as as string, props)
         ) : (
           <input

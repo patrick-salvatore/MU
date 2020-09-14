@@ -7,7 +7,7 @@ const TransitionComponent = ({ expanded, children }) => (
   <div className={`accordion ${expanded ? 'open' : ''}`}>{children}</div>
 );
 
-const Accordion: React.FC = ({ children: childrenProps }) => {
+const Accordion: React.FC = ({ children }) => {
   const [expanded, setExpanded] = React.useState(false);
 
   const handleChange = React.useCallback(() => {
@@ -19,13 +19,13 @@ const Accordion: React.FC = ({ children: childrenProps }) => {
     handleChange,
   ]);
 
-  const [summary, ...children] = React.Children.toArray(childrenProps);
+  const [Summary, ...rest] = React.Children.toArray(children);
   return (
     <div className="accordion__wrapper">
       <AccordionContext.Provider value={contextValue}>
-        {summary}
+        {Summary}
       </AccordionContext.Provider>
-      <TransitionComponent expanded={expanded}>{children}</TransitionComponent>
+      <TransitionComponent expanded={expanded}>{rest}</TransitionComponent>
     </div>
   );
 };

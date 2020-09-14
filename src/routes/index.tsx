@@ -5,7 +5,7 @@ import BoardPage from '@pages/BoardPage';
 import ContactPage from '@pages/ContactPage';
 import LandingPage from '@pages/LandingPage';
 import Donate from '@pages/Donate';
-import NotFound from '@pages/NotFound';
+// import NotFound from '@pages/NotFound';
 import Newsletter from '@pages/Newsletter';
 
 import ScrollToTop from '@components/scroll-to-top';
@@ -19,12 +19,11 @@ export const AppView: React.FC = (): JSX.Element => (
       <Navbar />
       <ScrollToTop>
         <Switch>
-          <Route exact={true} path={ROUTES.LANDING} component={LandingPage} />
           <Route exact={true} path={ROUTES.CONTACT} component={ContactPage} />
           <Route exact={true} path={ROUTES.BOARD} component={BoardPage} />
           <Route exact={true} path={ROUTES.DONATE} component={Donate} />
           <Route exact={true} path={ROUTES.NEWSLETTER} component={Newsletter} />
-          <Route component={NotFound} />
+          <Route path={ROUTES.LANDING} component={LandingPage} />
         </Switch>
       </ScrollToTop>
     </BrowserRouter>

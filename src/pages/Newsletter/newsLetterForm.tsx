@@ -6,19 +6,9 @@ import { FormInput } from '@components/Inputs/FormInput';
 import { registerRequiredWithMessage } from '@components/form/_form';
 import { LoadingButton } from '@components/LoadingButton';
 import { DropDown } from '@components/Inputs/DropDown';
+import ErrorMessage from '@components/FormErrorMessage';
 
 import './newsLetterForm.scss';
-
-const NewsletterFormState = {
-  emailAddress: '',
-  firstName: '',
-  lastName: '',
-  address: '',
-  phoneNumber: '',
-  teamAffiliation: '',
-  classYear: '',
-  teamMember: '',
-};
 
 const teamAffiliationOption = [
   'Alumnus/Almuna',
@@ -51,31 +41,23 @@ const TeamAffiliationError = {
 const NewsLetterForm = () => {
   const {
     register,
-    unregister,
     handleSubmit,
     errors,
     setValue,
     setError,
-  } = useForm<typeof NewsletterFormState>();
-
-  React.useEffect(() => {
-    register({ name: 'teamAffiliation' });
-
-    return () => {
-      unregister('teamAffiliation');
-    };
-  }, [register, unregister]);
+    clearError,
+  } = useForm();
 
   const onSubmit = handleSubmit(values => {
     if (!values.teamAffiliation) {
       setError('teamAffiliation', TeamAffiliationError);
     }
+    clearError();
     console.log(values);
-    console.log(errors);
   });
 
   return (
-    <form onSubmit={onSubmit} className="contact-form">
+    <form onSubmit={onSubmit} className="news-letter--form">
       <FormSection title="Email Address" name="email" required>
         <FormInput
           register={registerRequiredWithMessage(
@@ -117,10 +99,12 @@ const NewsLetterForm = () => {
           required
           register={register}
           setValue={setValue}
-          errorMessage="Please tell us your affiliation to MU rowing"
           options={teamAffiliationOption}
           name="teamAffiliation"
         />
+        {errors.teamAffiliation && (
+          <ErrorMessage error={errors.teamAffiliation.types.message} />
+        )}
       </FormSection>
       <FormSection title="Class Year" name="class-year">
         <DropDown
@@ -140,7 +124,7 @@ const NewsLetterForm = () => {
       <LoadingButton
         isLoading={false}
         type="submit"
-        className="contact-form--button"
+        className="news-letter--button"
         text="SUBMIT"
       />
     </form>

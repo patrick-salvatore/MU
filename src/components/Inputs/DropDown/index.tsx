@@ -24,21 +24,22 @@ export const DropDown = ({
   setValue,
   name,
 }: DropDownProps) => {
+  const [dropdownState, setDropdownState] = React.useState<string>();
+
   React.useEffect(() => {
-    register({
-      name,
-    });
+    register({ name });
   }, [register, name]);
 
   const selectOption = ({ value }) => {
     setValue(name, value);
+    setDropdownState(value);
   };
 
   return (
     <RDropdown
       options={options}
       onChange={selectOption}
-      value={defaultOption}
+      value={dropdownState || defaultOption || ''}
       placeholder={placeholder || 'Select...'}
       controlClassName="dropDownInput"
     />

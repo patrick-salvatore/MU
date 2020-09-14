@@ -1,6 +1,5 @@
 import React from 'react';
 import './Donate.scss';
-import DonationForm from './donation-form';
 
 const TextSection = (): JSX.Element => (
   <section className="donate--text__wrapper">
@@ -89,7 +88,7 @@ const TextSection = (): JSX.Element => (
 const Donate = (): JSX.Element => {
   return (
     <div className="donate__container">
-      <DonationForm />
+      {/* <DonationForm /> */}
       <TextSection />
     </div>
   );

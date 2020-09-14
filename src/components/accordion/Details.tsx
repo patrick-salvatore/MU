@@ -1,9 +1,19 @@
 import React from 'react';
 
-import './details.scss';
-
 const Details = ({ children }) => {
-  return <div className="details__wrapper">{children}</div>;
+  return (
+    <div
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        paddingLeft: '30px',
+        paddingTop: '1rem',
+        paddingBottom: '1rem',
+      }}
+    >
+      {children}
+    </div>
+  );
 };
 
 export default Details;

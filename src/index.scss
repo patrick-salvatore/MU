@@ -29,10 +29,10 @@ body {
 
 h1,
 h2,
+h3,
 h4,
 h5 {
   margin: 0;
-  // color: #00274c;
   color: #0071bc;
 }
 
@@ -76,6 +76,14 @@ p {
   line-height: 1.8em;
 }
 
-i, svg, button {
+i,
+svg,
+button {
   cursor: pointer;
+}
+
+input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  background: #fafafa;
 }
