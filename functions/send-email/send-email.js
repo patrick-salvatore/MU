@@ -4,8 +4,6 @@ require('dotenv').config();
 exports.handler = async function(event) {
   const payload = JSON.parse(event.body);
 
-  console.log(process.env.SENDGRID_API_KEY);
-
   const fromEmail = new helper.Email('info@friendsofmercyhurstrowing.com');
   const toEmail = new helper.Email(
     'info@friendsofmercyhurstrowing.com',
