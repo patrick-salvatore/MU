@@ -64,8 +64,11 @@ const Navbar: React.FC<RouteComponentProps> = ({ location }): JSX.Element => {
         >
           <span className="link__text">HOME</span>
         </NavLink>
-        <NavLink className="link" activeClassName="link__active" to="/donate">
+        {/* <NavLink className="link" activeClassName="link__active" to="/donate">
           <span className="link__text">DONATE</span>
+        </NavLink> */}
+        <NavLink className="link" activeClassName="link__active" to="/connect">
+          <span className="link__text">CONNECT</span>
         </NavLink>
         <NavLink className="link" activeClassName="link__active" to="/board">
           <span className="link__text">OUR BOARD</span>
