@@ -68,7 +68,7 @@ const NewsLetterForm = () => {
           error={errors.emailAddress}
         />
       </FormSection>
-      <FormSection title="You Name" name="name" required>
+      <FormSection title="Your Name" name="name" required>
         <FormInput
           register={registerRequiredWithMessage(
             register,

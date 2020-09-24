@@ -1,14 +1,11 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 import path from 'path';
 import plugins from './plugins';
 import { rules } from './loaders';
 import { jsFolder, outputPath, entryPath } from './paths';
-// import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
 
 export const dirName = path.join(__dirname, '../');
 
 const entry = {
-  // vendor: 'react',
   bundle: entryPath,
 };
 
@@ -46,11 +43,6 @@ const optimization = {
 
 const resolve = {
   extensions: ['.js', '.jsx', '.ts', '.tsx', '.scss', '.css'],
-  // plugins: [
-  //   new TsconfigPathsPlugin({
-  //     configFile: 'tsconfig.json',
-  //   }),
-  // ],
   alias: {
     '@hooks': path.resolve(dirName, 'src', 'hooks'),
     '@components': path.resolve(dirName, 'src', 'components'),

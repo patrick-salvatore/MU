@@ -1,6 +1,3 @@
-import '@babel/polyfill';
-import 'core-js/es/set';
-import 'core-js/stable';
 import React from 'react';
 import { render } from 'react-dom';
 import { AppView } from './routes/index';
@@ -13,8 +10,8 @@ const appRoot = document.getElementById('FOMR--root');
 
 const APP = (
   <GlobalProvider>
-    <Notification />
     <AppView />
+    <Notification />
   </GlobalProvider>
 );
 

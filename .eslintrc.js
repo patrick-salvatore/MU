@@ -81,6 +81,7 @@ module.exports = {
     '@typescript-eslint/no-var-requires': 0,
     '@typescript-eslint/interface-name-prefix': [0],
     '@typescript-eslint/explicit-function-return-type': 0,
+    '@typescript-eslint/no-non-null-assertion': 0,
     // react
     'react/prop-types': [0],
     // 'react-hooks/rules-of-hooks': 'error',
