@@ -1,6 +1,6 @@
 import React from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import './LandingPage.scss';
 import {
   ColumnContainer,
@@ -37,15 +37,15 @@ const LandingPage: React.FC = (): JSX.Element => {
         <div className="donation__wrapper">
           <h1 className="donation-title">laker pride</h1>
           <p className="donation-text">
-            FOMR provides the necessary support and guidance to allow our
-            ambitious, Mercyhurst Rowing Team — comprised of hard working
-            student athletes of the Meryhurst University Rowing team — to push
-            competitive and athletic boundaries, seeking new ways to race and
-            win.
+            Our goal is to provide a home base for Mercyhurst rowers. No matter
+            what year you graduated, FOMR is here to make sure you never forget
+            the good old days. By coming together and celebrating program
+            history from past to present, there will always be one thing that
+            joins us together - rowing.
           </p>
-          <Link to="/donate" className="donation-button">
+          {/* <Link to="/donate" className="donation-button">
             donate to the team
-          </Link>
+          </Link> */}
         </div>
       </section>
       <LazyLoadImage className="banner_img" src={oars} />
@@ -55,10 +55,10 @@ const LandingPage: React.FC = (): JSX.Element => {
             <div className="middle_header__wrapper">
               <h1 className="middle-content__header">who are we</h1>
               <p className="middle-content__text">
-                The Mercyhurst Rowing Association is a 501(c)(3) non-profit
+                Friends of Mercyhurst Rowing is a 501(c)(3) non-profit
                 organization representing the alumni and friends of the
-                University of Mercyhurst Rowing Team. Our members work together
-                to support the team and its mission to provide an environment in
+                Mercyhurst University Rowing Team. Our members work together to
+                support the team and its mission to provide an environment in
                 which the athletes of the team can train, grow, and represent
                 the university in intercollegiate competition.
               </p>

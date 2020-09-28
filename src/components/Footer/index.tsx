@@ -9,20 +9,20 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faFacebook,
-  faTwitter,
+  faLinkedin,
   faInstagram,
 } from '@fortawesome/free-brands-svg-icons';
 import { AnchorTag } from '@components/anchorTag/anchorTag';
 
-library.add(faFacebook, faTwitter, faInstagram);
+library.add(faFacebook, faLinkedin, faInstagram);
 
 const facebookLookup: IconLookup = { prefix: 'fab', iconName: 'facebook' };
 const facebookIconDefinition: IconDefinition = findIconDefinition(
   facebookLookup
 );
 
-const twitterLookup: IconLookup = { prefix: 'fab', iconName: 'twitter' };
-const twitterIconDefinition: IconDefinition = findIconDefinition(twitterLookup);
+const linkeInLookup: IconLookup = { prefix: 'fab', iconName: 'linkedin' };
+const linkeinIconDefinition: IconDefinition = findIconDefinition(linkeInLookup);
 
 const instagramLookup: IconLookup = { prefix: 'fab', iconName: 'instagram' };
 const instagramIconDefinition: IconDefinition = findIconDefinition(
@@ -45,7 +45,7 @@ export const Footer = (): JSX.Element => {
         14736
       </p>
       <p className="text">
-        ©CopyRight {currentYear} - Friends of Mercyhurst Rowing
+        ©Copyright {currentYear} - Friends of Mercyhurst Rowing
       </p>
       <div className="social-media">
         <AnchorTag
@@ -54,13 +54,13 @@ export const Footer = (): JSX.Element => {
         >
           <FontAwesomeIcon
             icon={facebookIconDefinition}
-            className="social-media__icon fab fa-facebook-f"
+            className="social-media__icon fab fa-facebook-f fa-2x"
           />
         </AnchorTag>
         <AnchorTag href="https://twitter.com/hurstrowing" newTab={true}>
           <FontAwesomeIcon
-            icon={twitterIconDefinition}
-            className="social-media__icon fab fa-twitter"
+            icon={linkeinIconDefinition}
+            className="social-media__icon fab fa-linkedin fa-2x"
           />
         </AnchorTag>
         <AnchorTag
@@ -69,7 +69,7 @@ export const Footer = (): JSX.Element => {
         >
           <FontAwesomeIcon
             icon={instagramIconDefinition}
-            className="social-media__icon fab fa-instagram"
+            className="social-media__icon fab fa-instagram fa-2x"
           />
         </AnchorTag>
       </div>

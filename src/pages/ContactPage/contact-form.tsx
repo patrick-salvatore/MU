@@ -47,7 +47,7 @@ const ContactForm = (): JSX.Element => {
         formFields={ContactFormInitalValues}
         render={({ register, handleSubmit, errors }): JSX.Element => (
           <form onSubmit={handleSubmit(onSubmit)} className="contact-form">
-            <FormSection title="You Name" name="name" required>
+            <FormSection title="Your Name" name="name" required>
               <FormInput
                 register={registerRequiredWithMessage(
                   register,
