@@ -3,6 +3,7 @@ const BOARD = '/board';
 const DONATE = '/donate';
 const CONTACT = '/contact';
 const NEWSLETTER = '/newsletter';
+const CONNECT = '/connect';
 
 export default {
   BOARD,
@@ -10,4 +11,5 @@ export default {
   DONATE,
   CONTACT,
   NEWSLETTER,
+  CONNECT,
 };
