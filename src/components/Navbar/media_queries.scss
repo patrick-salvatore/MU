@@ -1,0 +1,55 @@
+@import '@scss/media_queries/ipad.scss';
+
+@include Ipad {
+  .nav__wrapper {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 325px 1fr;
+
+    &.sticky {
+      .logo__wrapper {
+        .logo {
+          .title {
+            line-height: 26px;
+            color: #0071bc;
+            font-size: 14px;
+          }
+
+          svg {
+            height: 65px;
+          }
+        }
+      }
+
+      .nav-contents__wrapper {
+        .link {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .logo__wrapper {
+      .logo {
+        width: 275px;
+        height: 95px;
+
+        .title {
+          font-size: 12px;
+          line-height: 26px;
+          letter-spacing: 3px;
+          color: #0071bc;
+        }
+
+        svg {
+          height: 75px;
+        }
+      }
+    }
+
+    .nav-contents__wrapper {
+      .link {
+        font-size: 14px;
+      }
+    }
+  }
+}

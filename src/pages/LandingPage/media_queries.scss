@@ -1,0 +1,29 @@
+@import '@scss/media_queries/ipad.scss';
+
+@include Ipad {
+  .lp__wrapper {
+    .lp__top__wrapper {
+      .top__title__wrapper {
+        .title {
+          font-size: 35px;
+        }
+      }
+    }
+
+    .lp__middle__wrapper {
+      .middle_header__wrapper {
+        .middle-content__text {
+          font-size: 15px;
+        }
+      }
+
+      .middle_imgs__wrapper {
+        .middle_img__wrapper {
+          .img__text {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}

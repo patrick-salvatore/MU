@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 import { PageContainer } from '@styledComponents/containers';
 import ContactEmailForm from './contact-form';
@@ -31,9 +31,9 @@ const Contactpage: React.FC = (): JSX.Element => {
           </div>
         </div>
         <div className="donation-button__wrapper">
-          <Link to="/donate" className="donation-button">
+          {/* <Link to="/donate" className="donation-button">
             donate
-          </Link>
+          </Link> */}
         </div>
       </div>
     </PageContainer>

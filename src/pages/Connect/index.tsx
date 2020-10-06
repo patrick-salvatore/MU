@@ -3,7 +3,7 @@ import './Connect.scss';
 
 const TextSection = (): JSX.Element => (
   <section className="connect__text--wrapper">
-    <h1 className="connect--header">CONNECT WITH US!</h1>
+    <h1 className="connect--header">CONNECT WITH US</h1>
     <div className="connect__text--container">
       <p>
         We are so grateful for your continued interest in the rowing community.

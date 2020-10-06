@@ -2,7 +2,7 @@ import React from 'react';
 import Modal from '@components/modal';
 import { Link } from 'react-router-dom';
 
-import OARS from '@img/modal-oars.png';
+// import OARS from '@img/modal-oars.png';
 import './styles.scss';
 
 const SubcribeBox = () => (
@@ -18,16 +18,16 @@ const SubcribeBox = () => (
   </div>
 );
 
-const DonateBox = () => (
-  <div className="donate--wrapper">
-    <h2>
-      Interested in making a donation to support Mercyhurst University Rowing?
-    </h2>
-    <Link to="/donate" className="donation-button">
-      YES!
-    </Link>
-  </div>
-);
+// const DonateBox = () => (
+//   <div className="donate--wrapper">
+//     <h2>
+//       Interested in making a donation to support Mercyhurst University Rowing?
+//     </h2>
+//     <Link to="/donate" className="donation-button">
+//       YES!
+//     </Link>
+//   </div>
+// );
 
 const LandingModal = () => {
   const [showModal, setShowModal] = React.useState(false);
@@ -50,8 +50,8 @@ const LandingModal = () => {
     <Modal open={showModal} closeModal={() => setShowModal(false)}>
       <div className="landing-modal-content">
         <SubcribeBox />
-        <img src={OARS} className="landing-modal-img" />
-        <DonateBox />
+        {/* <img src={OARS} className="landing-modal-img" />
+        <DonateBox /> */}
       </div>
     </Modal>
   );

@@ -22,11 +22,7 @@ export const InstagramFeed: React.FC = (): JSX.Element => {
   const openInstagramImg = (e: React.MouseEvent<HTMLDivElement>): void => {
     const { url } = (e.target as HTMLDivElement).dataset;
 
-    window.open(
-      url,
-      '_blank'
-      // 'menubar=yes,resizable=yes,scrollbars=yes,status=yes,width=750,height=750'
-    );
+    window.open(url, '_blank');
   };
 
   return (

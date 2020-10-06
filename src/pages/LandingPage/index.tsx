@@ -43,6 +43,7 @@ const LandingPage: React.FC = (): JSX.Element => {
             history from past to present, there will always be one thing that
             joins us together - rowing.
           </p>
+          {/* Put this back later */}
           {/* <Link to="/donate" className="donation-button">
             donate to the team
           </Link> */}
