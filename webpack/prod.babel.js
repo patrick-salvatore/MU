@@ -2,7 +2,6 @@
 import CompressionPlugin from 'compression-webpack-plugin';
 import HtmlMinifierPlugin from 'html-minifier-webpack-plugin';
 import TerserPlugin from 'terser-webpack-plugin';
-import Visualizer from 'webpack-visualizer-plugin';
 import merge from 'webpack-merge';
 import common from './common';
 
@@ -26,7 +25,6 @@ export default function(env, argv) {
       threshold: 8192,
       minRatio: 0.7,
     }),
-    isProd && new Visualizer(),
     new HtmlMinifierPlugin(minify),
   ];
 

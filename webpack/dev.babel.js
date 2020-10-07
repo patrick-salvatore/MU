@@ -1,6 +1,7 @@
 import merge from 'webpack-merge';
 import devServer from './devServer';
 import config from './common';
+import Visualizer from 'webpack-visualizer-plugin';
 import webpack from 'webpack';
 
 module.exports = merge(config, {
@@ -11,5 +12,5 @@ module.exports = merge(config, {
     poll: true,
   },
   devServer: devServer,
-  plugins: [new webpack.HotModuleReplacementPlugin()],
+  plugins: [new webpack.HotModuleReplacementPlugin(), new Visualizer()],
 });
