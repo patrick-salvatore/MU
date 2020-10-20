@@ -53,6 +53,7 @@ const resolve = {
     '@pages': path.resolve(dirName, 'src', 'pages'),
     '@routes': path.resolve(dirName, 'src', 'routes'),
     '@styledComponents': path.resolve(dirName, 'src', 'styledComponents'),
+    '@svg': path.resolve(dirName, 'src', 'svg'),
     '@utils': path.resolve(dirName, 'src', 'utils'),
     '@img': path.resolve(dirName, 'public', 'img'),
     '@fonts': path.resolve(dirName, 'public', 'fonts'),

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useAccordionContext } from './AccordionContext';
-import ChevronRight from './chevron-right.svg';
-import ChevronDown from './chevron-down.svg';
+import ChevronRight from '@svg/chevron-right.svg';
+import ChevronDown from '@svg/chevron-down.svg';
 
 import './summary.scss';
 
