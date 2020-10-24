@@ -9,14 +9,19 @@ export type GlobalNotificationStateType = {
   messages: GlobalNotificationType[];
 };
 
+export type UiSettingsStateType = {
+  isMobile: boolean;
+};
 // export type SetContextState<T> = <K extends keyof T>(
 //   path: K,
 //   newValue: T[K],
 // ) => void;
 
-export interface IGlobalDataContext {
+export type IGlobalDataContext = {
   notifications: GlobalNotificationStateType;
+  uiSettings: UiSettingsStateType;
   setGlobalNotification?: (arg: GlobalNotificationStateType) => void;
-}
+  setIsMobile?: (bool: boolean) => void;
+};
 
 export type IGlobalDataContextMemo = IGlobalDataContext;

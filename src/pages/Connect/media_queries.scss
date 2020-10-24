@@ -1,0 +1,16 @@
+@import '@scss/media_queries/ipad.scss';
+@import '@scss/media_queries/iphone.scss';
+
+@include Ipad {
+  .connect__container {
+    padding: 100px 50px;
+    padding-top: 200px;
+  }
+}
+
+@include Iphone {
+  .connect__container {
+    padding: 100px 50px;
+    padding-top: 100px;
+  }
+}

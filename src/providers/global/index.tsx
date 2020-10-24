@@ -6,6 +6,9 @@ import {
 } from './types';
 
 const initialGlobalState = {
+  uiSettings: {
+    isMobile: false,
+  },
   notifications: {
     messages: [],
   },
@@ -31,11 +34,19 @@ const GlobalProvider: React.FC = (props): JSX.Element => {
         notifications: { ...notificationProps },
       });
     },
-    []
+    [setGlobalState]
   );
+
+  const setIsMobile = React.useCallback((bool: boolean) => {
+    setGlobalState({
+      ...globalState,
+      uiSettings: { isMobile: bool },
+    });
+  }, []);
 
   const memoObject = {
     ...globalState,
+    setIsMobile,
     setGlobalNotification,
   };
 

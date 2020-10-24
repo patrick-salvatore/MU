@@ -22,7 +22,3 @@ export const ColumnContainer = styled.div`
 export const FullPageContainer = styled.div`
   height: 100vh;
 `;
-
-export const PageContainer = styled.div`
-  padding-top: 250px;
-`;

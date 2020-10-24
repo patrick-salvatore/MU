@@ -7,7 +7,6 @@ import { LoadingButton } from '@components/LoadingButton';
 import { useSendEmail } from '@store/sendEmail';
 import { FormInput } from '@components/Inputs/FormInput';
 import { FormSection } from '@components/FormSection';
-import './contact-form.scss';
 
 const ContactFormInitalValues = {
   firstName: '',

@@ -1,4 +1,5 @@
 @import '@scss/media_queries/ipad.scss';
+@import '@scss/media_queries/iphone.scss';
 
 @include Ipad {
   .lp__wrapper {
@@ -12,6 +13,10 @@
 
     .lp__middle__wrapper {
       .middle_header__wrapper {
+        padding-top: 2em;
+        .middle-content__header {
+          margin-bottom: 0.9em;
+        }
         .middle-content__text {
           font-size: 15px;
         }
@@ -24,6 +29,70 @@
           }
         }
       }
+    }
+    .banner_img {
+      height: 40vh;
+    }
+  }
+}
+
+@include Iphone {
+  .lp__wrapper {
+    .lp__top__wrapper {
+      justify-items: center;
+      .top__title__wrapper {
+        width: 91%;
+        top: 19%;
+        .title {
+          font-size: 25px;
+        }
+      }
+    }
+
+    .lp__middle__wrapper {
+      .middle_header__wrapper {
+        padding: 2em 0;
+
+        .middle-content__header {
+          font-size: 28px;
+          margin-bottom: 0.5em;
+        }
+        .middle-content__text {
+          font-size: 15px;
+        }
+      }
+
+      .middle_imgs__wrapper {
+        display: flex;
+        flex-direction: column;
+        .middle_img__wrapper {
+          width: 100%;
+
+          &:first-of-type {
+            margin-bottom: 10px;
+          }
+          .middle_img {
+          }
+
+          .img__text {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+
+    .lp__bottom__wrapper {
+      .donation__wrapper {
+        .donation-text {
+          width: initial;
+          padding: 16px;
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .banner_img {
+      height: 20vh;
     }
   }
 }

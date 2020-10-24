@@ -1,6 +1,6 @@
 import React from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { FullPageContainer } from '@styledComponents/containers';
 
 import NewsLetterForm from './newsLetterForm';
@@ -29,11 +29,11 @@ const Newsletter: React.FC = (): JSX.Element => (
         </FullPageContainer>
       </div>
     </div>
-    <div className="donation-button__wrapper">
+    {/* <div className="donation-button__wrapper">
       <Link to="/donate" className="donation-button">
         donate
       </Link>
-    </div>
+    </div> */}
   </div>
 );
 

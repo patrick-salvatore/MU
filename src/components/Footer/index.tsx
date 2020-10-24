@@ -1,5 +1,4 @@
 import React from 'react';
-import './footer.scss';
 import {
   IconLookup,
   IconDefinition,
@@ -13,6 +12,7 @@ import {
   faInstagram,
 } from '@fortawesome/free-brands-svg-icons';
 import { AnchorTag } from '@components/anchorTag/anchorTag';
+import './footer.scss';
 
 library.add(faFacebook, faLinkedin, faInstagram);
 
@@ -49,7 +49,7 @@ export const Footer = (): JSX.Element => {
       </p>
       <div className="social-media">
         <AnchorTag
-          href="https://www.facebook.com/MercyhurstRowing"
+          href="https://www.facebook.com/friendsofmercyhurstrowing/"
           newTab={true}
         >
           <FontAwesomeIcon

@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink, RouteComponentProps } from 'react-router-dom';
-import LogoSVG from '@svg/_logo2.svg';
+// import LogoSVG from '@svg/_logo2.svg';
+import { NavLogo } from './NavLogo';
 import ChevronLeft from '@svg/chevron-left.svg';
 import ChevronRight from '@svg/chevron-right.svg';
 
@@ -82,7 +83,7 @@ export const MobileNav = ({
           </div>
           <div className="logo__wrapper">
             <div className="overlay"></div>
-            <LogoSVG />
+            <NavLogo />
           </div>
         </div>
       </nav>

@@ -1,11 +1,13 @@
 .contact-page {
+  padding-bottom: 15px;
+
   .contact__wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-items: center;
     padding: 0px 50px;
     padding-bottom: 50px;
-
+    
     .map__wrapper {
       .map-header {
         font-size: 36px;
@@ -18,15 +20,17 @@
         font-size: 16px;
       }
     }
+    @import './contact-form.scss';
+    @import './form-media-queries.scss';
   }
-
+  
   .donation-button__wrapper {
     display: flex;
     align-items: center;
     height: 150px;
     justify-content: center;
     padding-top: 76px;
-
+    
     .donation-button {
       height: 36px;
       width: min-content;
@@ -43,3 +47,4 @@
     }
   }
 }
+@import './media-queries.scss';

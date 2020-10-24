@@ -7,43 +7,21 @@ import { DesktopNav } from './DesktopNav';
 import { MobileNav } from './MobileNav';
 
 import './nav.scss';
-
-function getWindowDimensions() {
-  const { innerWidth: width, innerHeight: height } = window;
-  return {
-    width,
-    height,
-  };
-}
-
-function useWindowDimensions() {
-  const [windowDimensions, setWindowDimensions] = React.useState(
-    getWindowDimensions()
-  );
-
-  React.useEffect(() => {
-    function handleResize() {
-      setWindowDimensions(getWindowDimensions());
-    }
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  return windowDimensions;
-}
+import { useGlobalContext } from '@providers/global';
 
 const Navbar: React.FC<RouteComponentProps> = ({
   location,
 }: {
   location: RouteComponentProps['location'];
 }): JSX.Element => {
-  const { width } = useWindowDimensions();
+  const {
+    uiSettings: { isMobile },
+  } = useGlobalContext();
 
-  return width > 425 ? (
-    <DesktopNav location={location} />
-  ) : (
+  return isMobile ? (
     <MobileNav location={location} />
+  ) : (
+    <DesktopNav location={location} />
   );
 };
 

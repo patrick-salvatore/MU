@@ -1,20 +1,40 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { AppView } from './routes/index';
-import GlobalProvider from './providers/global';
+import GlobalProvider, { useGlobalContext } from './providers/global';
 import Notification from './components/notifications/index';
 
 import './index.scss';
 
 const appRoot = document.getElementById('FOMR--root');
 
-const APP = (
-  <GlobalProvider>
-    <AppView />
-    <Notification />
-  </GlobalProvider>
-);
+const App = () => {
+  const { setIsMobile } = useGlobalContext();
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      const { innerWidth: width } = window;
+      setIsMobile!(width < 428);
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return (
+    <>
+      <AppView />
+      <Notification />
+    </>
+  );
+};
 
 document.addEventListener('DOMContentLoaded', function() {
-  render(APP, appRoot);
+  render(
+    <GlobalProvider>
+      <App />
+    </GlobalProvider>,
+    appRoot
+  );
 });

@@ -1,0 +1,33 @@
+@import '@scss/media_queries/ipad.scss';
+@import '@scss/media_queries/iphone.scss';
+
+@include Ipad {
+  .contact-form__wrapper {
+    .contact-form-header {
+      font-size: 38px;
+    }
+    .contact-form {
+      padding: 0;
+
+      .contact-form--button {
+        position: initial;
+      }
+    }
+  }
+}
+
+@include Iphone {
+  .contact-form__wrapper {
+    .contact-form-header {
+      font-size: 32px;
+      text-align: center;
+    }
+    .contact-form {
+      padding: 0;
+
+      .contact-form--button {
+        position: initial;
+      }
+    }
+  }
+}

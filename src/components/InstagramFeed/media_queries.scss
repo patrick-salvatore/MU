@@ -1,0 +1,26 @@
+@import '@scss/media_queries/ipad.scss';
+@import '@scss/media_queries/iphone.scss';
+
+@include Ipad {
+  .instagram-component {
+    margin-top: 44px;
+    .instagram__wrapper {
+      padding: 20px 5px;
+      .instagram-img {
+        width: 230px;
+      }
+    }
+  }
+}
+
+@include Iphone {
+  .instagram-component {
+    margin-top: 44px;
+    .instagram__wrapper {
+      padding: 20px 5px;
+      .instagram-img {
+        width: 230px;
+      }
+    }
+  }
+}

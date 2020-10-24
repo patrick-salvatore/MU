@@ -26,7 +26,7 @@ export const InstagramFeed: React.FC = (): JSX.Element => {
   };
 
   return (
-    <>
+    <div className="instagram-component">
       <div className="instagram--header">
         <h1 className="header--name">@mercyhurst_lightmen</h1>
       </div>
@@ -43,6 +43,6 @@ export const InstagramFeed: React.FC = (): JSX.Element => {
           />
         ))}
       </div>
-    </>
+    </div>
   );
 };

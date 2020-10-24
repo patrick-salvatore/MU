@@ -1,0 +1,67 @@
+@import '@scss/media_queries/ipad.scss';
+@import '@scss/media_queries/iphone.scss';
+
+@include Ipad {
+  .board__wrapper {
+    padding: 100px 50px;
+    padding-top: 175px;
+    .board__header {
+      .board__header--title {
+        font-size: 48px;
+      }
+    }
+
+    .board__members {
+      justify-content: initial;
+      .board__members--member {
+        width: 40%;
+
+        .member-image__container {
+          .member-image__wrapper {
+            margin: 0;
+            .member-image {
+              height: 265px;
+            }
+          }
+        }
+        .member-info {
+          padding-top: 20px;
+        }
+      }
+    }
+  }
+}
+
+@include Iphone {
+  .board__wrapper {
+    padding: 75px 25px;
+    padding-top: 100px;
+    .board__header {
+      .board__header--title {
+        font-size: 46px;
+      }
+
+      .board__header--sub-title {
+        width: auto;
+      }
+    }
+
+    .board__members {
+      width: 100%;
+      flex-wrap: nowrap;
+      flex-direction: column;
+      padding-bottom: 3rem;
+
+      &--member {
+        width: 100%;
+        padding: 0;
+        padding-bottom: 20px;
+
+
+        .member-info { 
+          padding-top: 20px
+        }
+      }
+    }
+  }
+}

@@ -1,3 +1,6 @@
+@import '@scss/media_queries/ipad.scss';
+@import '@scss/media_queries/iphone.scss';
+
 .summary__wrapper {
   display: flex;
   height: fit-content;
@@ -6,6 +9,28 @@
     svg {
       height: 20px;
       width: 20px;
+    }
+  }
+}
+
+@include Ipad {
+  .summary__wrapper {
+    .icon__wrapper {
+      svg {
+        height: 15px;
+        width: 15px;
+      }
+    }
+  }
+}
+
+@include Iphone {
+  .summary__wrapper {
+    .icon__wrapper {
+      svg {
+        height: 15px;
+        width: 15px;
+      }
     }
   }
 }

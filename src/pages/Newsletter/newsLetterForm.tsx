@@ -26,7 +26,7 @@ const getClassYears = (): string[] => {
   const currYear = new Date().getFullYear() + 7;
   const years: string[] = [];
 
-  for (let i = currYear; i > 1975; i--) {
+  for (let i = currYear; i > 1970; i--) {
     years.push(`${i}`);
   }
 
