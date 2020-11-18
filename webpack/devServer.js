@@ -1,4 +1,4 @@
-import { outputPath } from './paths';
+const { outputPath } = require('./paths');
 
 module.exports = {
   contentBase: outputPath,

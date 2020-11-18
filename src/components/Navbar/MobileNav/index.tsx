@@ -3,7 +3,7 @@ import { NavLink, RouteComponentProps } from 'react-router-dom';
 // import LogoSVG from '@svg/_logo2.svg';
 import { NavLogo } from './NavLogo';
 import ChevronLeft from '@svg/chevron-left.svg';
-import ChevronRight from '@svg/chevron-right.svg';
+// import ChevronRight from '@svg/chevron-right.svg';
 
 export const MobileNav = ({
   location,
@@ -24,7 +24,7 @@ export const MobileNav = ({
         {isOpen ? (
           <ChevronLeft onClick={() => toggleSideNav(false)} className="icon" />
         ) : (
-          <ChevronRight onClick={() => toggleSideNav(true)} className="icon" />
+          <>MENU</>
         )}
       </div>
     </div>

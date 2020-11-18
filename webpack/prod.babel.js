@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/camelcase */
-import CompressionPlugin from 'compression-webpack-plugin';
-import HtmlMinifierPlugin from 'html-minifier-webpack-plugin';
-import TerserPlugin from 'terser-webpack-plugin';
-import merge from 'webpack-merge';
-import common from './common';
+const CompressionPlugin = require('compression-webpack-plugin');
+const HtmlMinifierPlugin = require('html-minifier-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const merge = require('webpack-merge');
+const common = require('./common');
 
-export default function(env, argv) {
+module.exports = function(env, argv) {
   const isProd = argv.mode === 'production';
 
   const minify = {
@@ -68,4 +68,4 @@ export default function(env, argv) {
   };
 
   return merge(common, prod);
-}
+};

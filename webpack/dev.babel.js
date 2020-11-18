@@ -1,8 +1,8 @@
-import merge from 'webpack-merge';
-import devServer from './devServer';
-import config from './common';
-import Visualizer from 'webpack-visualizer-plugin';
-import webpack from 'webpack';
+const merge = require('webpack-merge');
+const devServer = require('./devServer');
+const config = require('./common');
+const Visualizer = require('webpack-visualizer-plugin');
+const webpack = require('webpack');
 
 module.exports = merge(config, {
   mode: 'development',

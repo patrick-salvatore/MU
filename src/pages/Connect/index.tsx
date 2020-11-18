@@ -50,29 +50,31 @@ const TextSection = (): JSX.Element => (
           <a>LinkedIn</a>
         </strong>
       </div>
-      <p>
-        For more information on how you can be apart of this community, email{' '}
-        <em>
-          <a href="mailto:info@friendsofmercyhurstrowing.com">
-            info@friendsofmercyhurstrowing.com
-          </a>
-        </em>
-      </p>
-      <p>
-        If you want to share your story or be a featured post for our social
-        media, please email{' '}
-        <em>
-          <a href="mailto:digital@friendsofmercyhurstrowing.com">
-            digital@friendsofmercyhurstrowing.com
-          </a>
-        </em>
-      </p>
-      <p>
-        &apos;Life can only be understood backwards; but it must be lived
-        forwards&apos;
-        <br />
-        -Søren Kierkegaard
-      </p>
+      <div className="link--wrapper">
+        <p>
+          For more information on how you can be apart of this community, email{' '}
+          <em>
+            <a href="mailto:info@friendsofmercyhurstrowing.com">
+              info@friendsofmercyhurstrowing.com
+            </a>
+          </em>
+        </p>
+        <p>
+          If you want to share your story or be a featured post for our social
+          media, please email{' '}
+          <em>
+            <a href="mailto:digital@friendsofmercyhurstrowing.com">
+              digital@friendsofmercyhurstrowing.com
+            </a>
+          </em>
+        </p>
+        <p>
+          &apos;Life can only be understood backwards; but it must be lived
+          forwards&apos;
+          <br />
+          -Søren Kierkegaard
+        </p>
+      </div>
     </div>
   </section>
 );

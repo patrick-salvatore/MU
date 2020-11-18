@@ -17,26 +17,30 @@
       "@styledComponents/*": ["src/styledComponents/*"],
       "@scss/*": ["src/scss/*"],
       "@img/*": ["public/img/*"],
-      "@fonts/*": ["public/fonts/*"],
+      "@fonts/*": ["public/fonts/*"]
     },
-    "target": "esnext",
+    "target": "es5",
     "declaration": false,
-    "lib": ["es5", "es6", "dom", "ES2017.Object"],
-    "allowJs": true,
+    "lib": [
+      "es2019",
+      "dom",
+      "ES2020.Promise"
+    ],
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
+    "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "strict": true,
     "removeComments": true,
     "noImplicitAny": false,
-    "module": "commonjs",
+    "module": "esnext",
     "jsx": "react",
-    "typeRoots": ["../../node_modules/@types"],
+    "typeRoots": ["../../node_modules/@types"]
   },
   "awesomeTypescriptLoaderOptions": {
-    "reportFiles": ["./src/**/**/*",]
+    "reportFiles": ["./src/**/**/*"]
   },
   "exclude": [
     "./public",
@@ -47,10 +51,7 @@
     "build",
     "scripts",
     "webpack",
-    "jest",
+    "jest"
   ],
-  "include": [
-    "<rootDir>/src/__test__/test-setup.js",
-    "./src/**/**/*",
-  ]
+  "include": ["<rootDir>/src/__test__/test-setup.js", "./src/**/**/*"]
 }

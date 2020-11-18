@@ -1,7 +1,7 @@
-import path from 'path';
-import fs from 'fs';
-import dotenv from 'dotenv';
-import webpack from 'webpack';
+const path = require('path');
+const fs = require('fs');
+const dotenv = require('dotenv');
+const webpack = require('webpack');
 
 module.exports = env => {
   const currPath = path.join(__dirname, '../');

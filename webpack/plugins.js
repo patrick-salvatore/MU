@@ -1,11 +1,11 @@
-import webpack from 'webpack';
-import path from 'path';
-import { CleanWebpackPlugin } from 'clean-webpack-plugin';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import { currentDirectory } from './envs';
-import WebpackBar from 'webpackbar';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import CopyWebpackPlugin from 'copy-webpack-plugin';
+const webpack = require('webpack');
+const path = require('path');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { currentDirectory } = require('./envs');
+const WebpackBar = require('webpackbar');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const plugins = [
   new WebpackBar({
@@ -31,4 +31,4 @@ const plugins = [
   }),
 ];
 
-export default plugins;
+module.exports = plugins;

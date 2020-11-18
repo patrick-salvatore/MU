@@ -1,19 +1,13 @@
-import path from 'path';
-import plugins from './plugins';
-import { rules } from './loaders';
-import { jsFolder, outputPath, entryPath } from './paths';
-
-export const dirName = path.join(__dirname, '../');
-
-const entry = {
-  bundle: entryPath,
-};
+const path = require('path');
+const plugins = require('./plugins');
+const rules = require('./loaders');
+const paths = require('./paths');
 
 const output = {
   publicPath: '/',
-  path: outputPath,
-  filename: `${jsFolder}/[name].min.js`,
-  chunkFilename: `${jsFolder}/[name].min.js`,
+  path: paths.outputPath,
+  filename: `${paths.jsFolder}/[name].min.js`,
+  chunkFilename: `${paths.jsFolder}/[name].min.js`,
 };
 
 const optimization = {
@@ -41,6 +35,7 @@ const optimization = {
   },
 };
 
+const dirName = path.join(__dirname, '../');
 const resolve = {
   extensions: ['.js', '.jsx', '.ts', '.tsx', '.scss', '.css'],
   alias: {
@@ -60,8 +55,8 @@ const resolve = {
   },
 };
 
-export default {
-  entry,
+module.exports = {
+  entry: paths.entryPath,
   output,
   optimization,
   resolve,

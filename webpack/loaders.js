@@ -1,4 +1,4 @@
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const htmlLoader = {
   test: /\/.html$/,
@@ -88,7 +88,7 @@ const fileLoader = {
   },
 };
 
-export const rules = [
+module.exports = [
   htmlLoader,
   tsLoader,
   stylesLoader,
