@@ -30,11 +30,9 @@ const App = () => {
   );
 };
 
-document.addEventListener('DOMContentLoaded', function() {
-  render(
-    <GlobalProvider>
-      <App />
-    </GlobalProvider>,
-    appRoot
-  );
-});
+render(
+  <GlobalProvider>
+    <App />
+  </GlobalProvider>,
+  appRoot
+);

@@ -8,34 +8,24 @@ import { LoadingButton } from '@components/LoadingButton';
 import { DropDown } from '@components/Inputs/DropDown';
 import ErrorMessage from '@components/FormErrorMessage';
 
+import {
+  TeamAffiliationError,
+  teamAffiliationOption,
+  getClassYears,
+  STATES,
+} from './constants';
 import './newsLetterForm.scss';
 
-const teamAffiliationOption = [
-  'Alumnus/Almuna',
-  'Parent',
-  'Current Team Memeber',
-  'Spouse of Alumnus/Almuna',
-  'Family',
-  'Friend of Team Memeber',
-  'Friend of Alumnus/Almuna',
-  'Outside Donor',
-  'Other',
-];
-
-const getClassYears = (): string[] => {
-  const currYear = new Date().getFullYear() + 7;
-  const years: string[] = [];
-
-  for (let i = currYear; i > 1970; i--) {
-    years.push(`${i}`);
-  }
-
-  return years;
-};
-
-const TeamAffiliationError = {
-  type: 'manual',
-  message: 'Please tell us your affiliation to MU rowing',
+type NewletterFields = {
+  emailAddress: string;
+  firstName: string;
+  lastName: string;
+  teamAffiliation: string;
+  streetAddress: string;
+  city: string;
+  state: string;
+  classYear: string;
+  teamMemberName: string | null;
 };
 
 const NewsLetterForm = () => {
@@ -46,7 +36,7 @@ const NewsLetterForm = () => {
     setValue,
     setError,
     clearError,
-  } = useForm();
+  } = useForm<NewletterFields>();
 
   const onSubmit = handleSubmit(values => {
     if (!values.teamAffiliation) {
@@ -91,10 +81,31 @@ const NewsLetterForm = () => {
       <FormSection title="Address" name="address">
         <FormInput register={register} name="address" />
       </FormSection>
+      <div
+        className="city_state__container"
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignContent: 'flex',
+        }}
+      >
+        <FormSection title="City" name="city">
+          <FormInput register={register} name="city" />
+        </FormSection>
+        <FormSection title="State" name="state">
+          <DropDown
+            required
+            register={register}
+            setValue={setValue}
+            options={STATES}
+            name="state"
+          />
+        </FormSection>
+      </div>
       <FormSection title="Phone Number" name="phone-number">
         <FormInput register={register} name="phoneNumber" />
       </FormSection>
-      <FormSection title="Team Affiliation" name="team-affiliation" required>
+      <FormSection title="Team Affiliation" name="team_affiliation" required>
         <DropDown
           required
           register={register}
@@ -102,11 +113,13 @@ const NewsLetterForm = () => {
           options={teamAffiliationOption}
           name="teamAffiliation"
         />
-        {errors.teamAffiliation && (
-          <ErrorMessage error={errors.teamAffiliation.types.message} />
+        {errors?.teamAffiliation?.types?.message && (
+          <ErrorMessage
+            error={errors.teamAffiliation.types.message as string}
+          />
         )}
       </FormSection>
-      <FormSection title="Class Year" name="class-year">
+      <FormSection title="Class Year" name="class-year" required>
         <DropDown
           required
           register={register}
@@ -116,10 +129,10 @@ const NewsLetterForm = () => {
         />
       </FormSection>
       <FormSection
-        title="If family/friend, name of rower/coxswain on team."
+        title="Know a team member? Let us know who."
         name="team-member"
       >
-        <FormInput register={register} name="teamMember" />
+        <FormInput register={register} name="teamMemberName" />
       </FormSection>
       <LoadingButton
         isLoading={false}

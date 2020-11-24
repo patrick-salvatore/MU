@@ -24,6 +24,7 @@
         margin-right: 4px;
 
         input {
+          color: #3a4c56;
           padding: 12px;
           border: 1px solid #ccc;
           background: #fafafa;
@@ -47,6 +48,7 @@
         width: 100%;
 
         input {
+          color: #3a4c56;
           padding: 12px;
           border: 1px solid #ccc;
           background: #fafafa;
@@ -59,6 +61,7 @@
         width: 100%;
 
         input {
+          color: #3a4c56;
           padding: 12px;
           border: 1px solid #ccc;
           background: #fafafa;
@@ -71,6 +74,7 @@
         width: 100%;
 
         input {
+          color: #3a4c56;
           padding: 12px;
           border: 1px solid #ccc;
           background: #fafafa;
@@ -83,6 +87,7 @@
         width: 100%;
 
         input {
+          color: #3a4c56;
           padding: 12px;
           border: 1px solid #ccc;
           background: #fafafa;
@@ -95,6 +100,7 @@
         width: 100%;
 
         input {
+          color: #3a4c56;
           padding: 12px;
           border: 1px solid #ccc;
           background: #fafafa;
@@ -107,6 +113,7 @@
         width: 100%;
 
         input {
+          color: #3a4c56;
           padding: 12px;
           border: 1px solid #ccc;
           background: #fafafa;
@@ -114,7 +121,51 @@
       }
     }
   }
-  
+
+  .city_state__container {
+    .form-section--container {
+      margin-top: 0;
+      margin-bottom: 0;
+      .form-section--city {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+
+        .form-input-wrapper {
+          input {
+            color: #3a4c56;
+            padding: 12px;
+            border: 1px solid #ccc;
+            background: #fafafa;
+          }
+
+          .input-sublabel {
+            color: #00274c;
+            margin-top: 5px;
+            font-size: 12px;
+          }
+        }
+      }
+
+      .form-section--state {
+        .Dropdown-root {
+          .Dropdown-control {
+            height: 100%;
+            padding: 11px 52px 11px 10px;
+
+            .Dropdown-placeholder {
+              display: inline-block;
+              vertical-align: middle;
+            }
+          }
+        }
+      }
+
+      &:last-of-type {
+        margin-left: 8px;
+      }
+    }
+  }
   .news-letter--button {
     cursor: pointer;
     background-color: #00274c;

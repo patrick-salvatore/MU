@@ -24,7 +24,7 @@ export const MobileNav = ({
         {isOpen ? (
           <ChevronLeft onClick={() => toggleSideNav(false)} className="icon" />
         ) : (
-          <>MENU</>
+          <span onClick={() => toggleSideNav(true)}>MENU</span>
         )}
       </div>
     </div>

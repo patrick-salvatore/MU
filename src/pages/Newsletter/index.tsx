@@ -1,7 +1,6 @@
 import React from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 // import { Link } from 'react-router-dom';
-import { FullPageContainer } from '@styledComponents/containers';
 
 import NewsLetterForm from './newsLetterForm';
 
@@ -24,9 +23,7 @@ const Newsletter: React.FC = (): JSX.Element => (
           We will not share your information with anyone and will only use it to
           keep you up to date about team news and fundraising.
         </p>
-        <FullPageContainer>
-          <NewsLetterForm />
-        </FullPageContainer>
+        <NewsLetterForm />
       </div>
     </div>
     {/* <div className="donation-button__wrapper">

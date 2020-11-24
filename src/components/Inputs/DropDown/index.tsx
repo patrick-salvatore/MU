@@ -1,12 +1,11 @@
 import React from 'react';
-import RDropdown from 'react-dropdown';
+import RDropdown, { ReactDropdownProps } from 'react-dropdown';
 import 'react-dropdown/style.css';
-import { Register, SetValue } from '@components/form/_form';
 
+import { Register, SetValue } from '@components/form/_form';
 import './styles.scss';
 
-interface DropDownProps {
-  options: any;
+interface DropDownProps extends ReactDropdownProps {
   defaultOption?: string;
   placeholder?: string;
   setValue: SetValue;
@@ -23,6 +22,7 @@ export const DropDown = ({
   register,
   setValue,
   name,
+  ...props
 }: DropDownProps) => {
   const [dropdownState, setDropdownState] = React.useState<string>();
 
@@ -37,6 +37,7 @@ export const DropDown = ({
 
   return (
     <RDropdown
+      {...props}
       options={options}
       onChange={selectOption}
       value={dropdownState || defaultOption || ''}
