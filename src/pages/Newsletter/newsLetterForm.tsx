@@ -3,57 +3,42 @@ import { useForm } from 'react-hook-form';
 
 import { FormSection } from '@components/FormSection';
 import { FormInput } from '@components/Inputs/FormInput';
-import { registerRequiredWithMessage } from '@components/form/_form';
+import {
+  registerEmail,
+  registerRequiredWithMessage,
+} from '@components/form/_form';
 import { LoadingButton } from '@components/LoadingButton';
 import { DropDown } from '@components/Inputs/DropDown';
 import ErrorMessage from '@components/FormErrorMessage';
 
-import {
-  TeamAffiliationError,
-  teamAffiliationOption,
-  getClassYears,
-  STATES,
-} from './constants';
+import { teamAffiliationOption, getClassYears, STATES } from './constants';
 import './newsLetterForm.scss';
-
-type NewletterFields = {
-  emailAddress: string;
-  firstName: string;
-  lastName: string;
-  teamAffiliation: string;
-  streetAddress: string;
-  city: string;
-  state: string;
-  classYear: string;
-  teamMemberName: string | null;
-};
+import { useNewsLetterSignup } from '@store/newsLetter';
+import { NewletterFields } from '@api/news_letter';
 
 const NewsLetterForm = () => {
-  const {
-    register,
-    handleSubmit,
-    errors,
-    setValue,
-    setError,
-    clearError,
-  } = useForm<NewletterFields>();
+  const { register, handleSubmit, errors, setValue } = useForm<
+    NewletterFields
+  >();
+  const { newsletterSignup, loading } = useNewsLetterSignup();
+  const [clearDropDown, setClearDropDown] = React.useState(false);
 
-  const onSubmit = handleSubmit(values => {
-    if (!values.teamAffiliation) {
-      setError('teamAffiliation', TeamAffiliationError);
-    }
-    clearError();
+  const onSubmit = handleSubmit((values, event: any) => {
     console.log(values);
+    if (!values.teamAffiliation) {
+      return;
+    }
+    newsletterSignup(values, () => {
+      event.target.reset();
+      setClearDropDown(true);
+    });
   });
 
   return (
     <form onSubmit={onSubmit} className="news-letter--form">
       <FormSection title="Email Address" name="email" required>
         <FormInput
-          register={registerRequiredWithMessage(
-            register,
-            'Please enter your email'
-          )}
+          register={registerEmail(register)}
           name="emailAddress"
           error={errors.emailAddress}
         />
@@ -79,7 +64,7 @@ const NewsLetterForm = () => {
         />
       </FormSection>
       <FormSection title="Address" name="address">
-        <FormInput register={register} name="address" />
+        <FormInput register={register} name="streetAddress" />
       </FormSection>
       <div
         className="city_state__container"
@@ -94,7 +79,6 @@ const NewsLetterForm = () => {
         </FormSection>
         <FormSection title="State" name="state">
           <DropDown
-            required
             register={register}
             setValue={setValue}
             options={STATES}
@@ -107,7 +91,7 @@ const NewsLetterForm = () => {
       </FormSection>
       <FormSection title="Team Affiliation" name="team_affiliation" required>
         <DropDown
-          required
+          clearStateFlag={clearDropDown}
           register={register}
           setValue={setValue}
           options={teamAffiliationOption}
@@ -119,9 +103,9 @@ const NewsLetterForm = () => {
           />
         )}
       </FormSection>
-      <FormSection title="Class Year" name="class-year" required>
+      <FormSection title="Class Year" name="class-year">
         <DropDown
-          required
+          clearStateFlag={clearDropDown}
           register={register}
           setValue={setValue}
           options={getClassYears()}
@@ -135,7 +119,7 @@ const NewsLetterForm = () => {
         <FormInput register={register} name="teamMemberName" />
       </FormSection>
       <LoadingButton
-        isLoading={false}
+        isLoading={loading}
         type="submit"
         className="news-letter--button"
         text="SUBMIT"

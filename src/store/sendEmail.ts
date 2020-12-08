@@ -1,5 +1,5 @@
 import React from 'react';
-import { sendEmailApi } from '@api/send-email';
+import { sendEmailApi } from '@api/send_email';
 import { useGlobalContext } from '@providers/global';
 
 export const useSendEmail = () => {
@@ -10,12 +10,13 @@ export const useSendEmail = () => {
     setLoading(true);
     try {
       const res = await sendEmailApi(payload);
-      if (res.data) {
+      if (res) {
         setGlobalNotification!({
-          messages: [{ message: res.data, type: 'success' }],
+          messages: [{ message: res.message, type: 'success' }],
         });
       }
     } catch (e) {
+      setLoading(false);
       setGlobalNotification!({
         messages: [
           {

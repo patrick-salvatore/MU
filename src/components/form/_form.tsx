@@ -40,6 +40,18 @@ export const registerEmail = reg =>
     },
   });
 
+export const registerWithValidation = (
+  reg,
+  message,
+  validationRegex = /^\d*[a-zA-Z][a-zA-Z0-9]*$/
+) =>
+  reg({
+    pattern: {
+      value: validationRegex,
+      message: message,
+    },
+  });
+
 export const registerRequiredWithMessage = (reg, msg: string) =>
   reg({
     required: {

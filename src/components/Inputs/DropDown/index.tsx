@@ -12,7 +12,7 @@ interface DropDownProps extends ReactDropdownProps {
   register: Register;
   name: string;
   errorMessage?: string;
-  required: boolean;
+  clearStateFlag?: boolean;
 }
 
 export const DropDown = ({
@@ -22,6 +22,7 @@ export const DropDown = ({
   register,
   setValue,
   name,
+  clearStateFlag,
   ...props
 }: DropDownProps) => {
   const [dropdownState, setDropdownState] = React.useState<string>();
@@ -29,6 +30,12 @@ export const DropDown = ({
   React.useEffect(() => {
     register({ name });
   }, [register, name]);
+
+  React.useEffect(() => {
+    if (clearStateFlag && dropdownState) {
+      setDropdownState('');
+    }
+  }, [clearStateFlag]);
 
   const selectOption = ({ value }) => {
     setValue(name, value);

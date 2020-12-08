@@ -19,14 +19,14 @@ const ContactFormInitalValues = {
 const ContactForm = (): JSX.Element => {
   const { loading, sendEmail } = useSendEmail();
 
-  const onSubmit = async (
+  const onSubmit = (
     values: typeof ContactFormInitalValues,
     event: React.BaseSyntheticEvent
   ) => {
     const payload = Object.assign(
       {},
       {
-        senderEmail: values.emailAddress,
+        emailAddress: values.emailAddress,
         senderName: `${values.firstName} ${values.lastName}`,
         emailSubject: values.subject,
         message: values.message,
