@@ -21,7 +21,7 @@ export const useNewsLetterSignup = () => {
         messages: [
           {
             message:
-              'Oops, something went wrong! Please contact us directly at info@friendsofmercyhurstrowing.com',
+              'Oops, something went wrong! Please contact us directly at digital@friendsofmercyhurstrowing.com',
             type: 'error',
           },
         ],
