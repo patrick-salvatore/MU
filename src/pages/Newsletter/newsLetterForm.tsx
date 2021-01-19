@@ -24,7 +24,6 @@ const NewsLetterForm = () => {
   const [clearDropDown, setClearDropDown] = React.useState(false);
 
   const onSubmit = handleSubmit((values, event: any) => {
-    console.log(values);
     if (!values.teamAffiliation) {
       return;
     }

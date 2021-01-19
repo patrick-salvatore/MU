@@ -1,9 +1,6 @@
 @import '@scss/media_queries/ipad.scss';
 @import '@scss/media_queries/iphone.scss';
 
-@include Ipad {
-}
-
 @include Iphone {
   .newsletter-page {
     .newsletter__wrapper {
@@ -12,7 +9,8 @@
         justify-content: center;
 
         .nl--img {
-          width: 90%;
+          height: 224px;
+          width: 336px;
         }
       }
       grid-template-columns: 1fr;
